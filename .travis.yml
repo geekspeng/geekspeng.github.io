@@ -9,26 +9,21 @@ before_install:
 install:
   - npm install   #安装hexo及插件
 before_script:
-  - npm install -g mocha
 script:
-  - hexo clean #清除
-  - hexo generate   #生成
+  - hexo clean    #清除
+  - hexo generate #生成
 after_script:
   - cd ./public
   - git init
-  - git config user.name "longxr"   #修改成自己的github用户名
-  - git config user.email "longxuanren@gmail.com"   #修改成自己的GitHub邮箱
+  - git config user.name "geekspeng"   #修改成自己的github用户名
+  - git config user.email "geekspeng@icloud.com"   #修改成自己的GitHub邮箱
+  - git remote add master git@github.com:geekspeng/geekspeng.github.io.git
   - git add .
-  - git commit -m "update by Travis-CI"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master #GH_token就是在travis中设置的token
+  - git commit -am "update by Travis-CI"
+  - git push --force "https://${GH_TOKEN}@${GH_REF}" master:master #GH_token就是在travis中设置的token
 branches:
   only:
-  - blog  #只监测这个分支，一有动静就开始构建
+  - develop  #只监测这个分支，一有动静就开始构建
 env:
     global:
-        - GH_REF: github.com/Longxr/Longxr.github.io.git
-
-作者：玖零儛
-链接：http://www.jianshu.com/p/93918de6fa2c
-來源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+        - GH_REF: github.com/geekspeng/geekspeng.github.io.git
