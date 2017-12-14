@@ -20,7 +20,7 @@ since: 2016
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: geekspeng
 
 
 # ---------------------------------------------------------------
@@ -33,7 +33,7 @@ copyright: true
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -78,8 +78,8 @@ menu_icons:
 
 # Schemes
 # scheme: Muse
-scheme: Mist
-# scheme: Pisces
+# scheme: Mist
+scheme: Pisces
 # scheme: Gemini
 
 
@@ -122,7 +122,10 @@ links_title: Links
 #links_layout: block
 #links_layout: inline
 links:
-  MacTalk: http://macshuo.com/
+  虎嗅网: http://www.huxiu.com/
+  InfoQ: http://www.infoq.com/cn/
+  伯乐在线: http://blog.jobbole.com/
+  博客园: http://www.cnblogs.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
@@ -148,8 +151,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  # position: right
+  # position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -158,8 +161,8 @@ sidebar:
   #  - remove  Totally remove sidebar including sidebar toggle.
   display: post
   # display: always
-  #display: hide
-  #display: remove
+  # display: hide
+  # display: remove
 
   # Sidebar offset from top menubar in pixels.
   offset: 12
@@ -169,8 +172,8 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button
-  scrollpercent: false
-  
+  scrollpercent: true
+
   # Enable sidebar on narrow view
   onmobile: false
 
@@ -198,7 +201,7 @@ auto_excerpt:
 post_meta:
   item_text: true
   created_at: true
-  updated_at: false
+  updated_at: true
   categories: true
 
 # Post wordcount display settings
@@ -214,12 +217,12 @@ post_wordcount:
 wechat_subscriber:
   enabled: true
   qcode: /uploads/qrcode_geekspeng.jpg
-  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+  description: 欢迎您扫一扫上面的二维码，订阅我的微信公众号！
 
 # Reward
-#reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
+# reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+# wechatpay: /images/wechatpay.jpg
+# alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
@@ -319,7 +322,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics: fd7738e99e6dceeb10fc01b9b5dba182
+# baidu_analytics: fd7738e99e6dceeb10fc01b9b5dba182
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -340,7 +343,7 @@ changyan:
   appkey: 45aed32ce389fff6baa89588e110f33e
 
 
-# Valine. 
+# Valine.
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://github.com/xCss/Valine
 valine:
@@ -450,9 +453,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz
+  app_key: bxqh0jEe46EikJAKPxYAMiyS
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -602,7 +605,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: false
