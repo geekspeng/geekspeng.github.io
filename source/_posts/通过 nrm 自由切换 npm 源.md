@@ -1,5 +1,7 @@
 ---
 title: 通过 nrm 自由切换 npm 源
+date: 2017-09-01
+updated: 2017-09-01
 tags: [node,nrm]
 categories: [node]
 ---

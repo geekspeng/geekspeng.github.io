@@ -1,5 +1,7 @@
 ---
 title: Hexo使用指南
+date: 2017-09-01
+updated: 2017-09-01
 tags: [hexo]
 categories: [hexo]
 ---

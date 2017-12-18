@@ -1,5 +1,7 @@
 ---
 title: 科学上网（一）：在 AWS 云服务器上搭建 Shadowsocks
+date: 2017-12-14
+updated: 2017-12-14
 tags: [科学上网,Shadowsocks,AWS云服务器]
 categories: [科学上网]
 ---

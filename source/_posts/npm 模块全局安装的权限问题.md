@@ -1,5 +1,7 @@
 ---
 title: npm 模块全局安装的权限问题
+date: 2017-09-01
+updated: 2017-09-01
 tags: [node,npm]
 categories: [node]
 ---

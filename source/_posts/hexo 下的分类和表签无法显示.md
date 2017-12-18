@@ -1,5 +1,7 @@
 ---
 title: hexo 下的分类和表签无法显示
+date: 2017-09-01
+updated: 2017-09-01
 tags: [hexo]
 categories: [hexo]
 ---

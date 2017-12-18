@@ -1,5 +1,7 @@
 ---
 title: Mac OSX 完全卸载node.js
+date: 2017-09-01
+updated: 2017-09-01
 tags: [node,mac]
 categories: [node]
 ---

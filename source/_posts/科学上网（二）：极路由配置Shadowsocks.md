@@ -1,5 +1,7 @@
 ---
 title: 科学上网（二）：极路由配置Shadowsocks
+date: 2017-12-15
+updated: 2017-12-15
 tags: [科学上网,Shadowsocks,极路由]
 categories: [科学上网]
 ---
@@ -52,6 +54,5 @@ cd /tmp && curl -k -o shadow.sh https://raw.githubusercontent.com/qiwihui/hiwifi
 # Shadowsocks账号设置
 
 在浏览器中登录极路由后台，完成配置后，点击开关开启即可，如果一切正常，下方状态会显示连接正常
-![](https://i.imgur.com/5f5dXy4.jpg)
-
+![](http://p15d1hccg.bkt.clouddn.com/15132641329660.jpg)
 

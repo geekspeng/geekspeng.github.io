@@ -1,5 +1,7 @@
 ---
 title: 搭建 Node.js 开发环境
+date: 2017-09-01
+updated: 2017-09-01
 tags: [node,nvm]
 categories: [node]
 ---
