@@ -115,33 +115,74 @@ $ brew cleanup
 
 
 
-# Homebrew 镜像
+# 使用 homebrew-bundle 备份软件列表
 
-由于Homebrew 下载源基本在国外，因此在中国的开发者下载速度可能会比较慢，针对这个问题，有一些人为国内的开发者做了一个Homebrew 镜像，比如http://ban.ninja/
+**备份软件列表**
+
+```bash
+$ brew bundle dump --describe --force --file="~/Desktop/Brewfile"
+```
+
+参数说明：
+- `--describe`：为列表中的命令行工具加上说明性文字。
+- `--force`：直接覆盖之前生成的`Brewfile`文件。如果没有该参数，则询问你是否覆盖。
+- `--file="~/Desktop/Brewfile"`：在指定位置生成文件。如果没有该参数，则在当前目录生成 `Brewfile` 文件。
+
+
+**批量安装软件**
+
+```bash
+$ brew bundle --file="~/Desktop/Brewfile"
+```
+
+# 替换 Homebrew 源
+
+默认官方的更新源都是存放在[GitHub](https://github.com/)上的，这也是中国大陆用户访问缓慢的原因，一般来说我们会更倾向选择国内提供的更新源，在此推荐[中国科大](https://mirrors.ustc.edu.cn/)以及[清华大学](https://mirrors.tuna.tsinghua.edu.cn/)提供的更新源。
+Homebrew的更新源由三部分组成：本体（brew.git）、核心（homebrew-core.git）以及二进制预编译包（homebrew-bottles）。
+从.git的后缀名可以看出，Homebrew的更新源是以Git仓库的形式存在的，所以需要用到Git。也正是如此，使得可以对其进行克隆，成为新源。
 
 **配置镜像源**
 
-设置环境变量 HOMEBREW_BOTTLE_DOMAIN 即可使用本镜像源加速下载 Homebrew 资源。
-
-**bash**
-
-打开 `~/.bashrc`
-
 ```bash
-sudo vim ~/.bashrc
+# 替换brew.git:
+$ cd "$(brew --repo)"
+# 中国科大:
+$ git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+# 清华大学:
+$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+
+# 替换homebrew-core.git:
+$ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# 中国科大:
+$ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+# 清华大学:
+$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+
+# 替换homebrew-bottles:
+# 中国科大:
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
+$ source ~/.bash_profile
+# 清华大学:
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.bash_profile
+$ source ~/.bash_profile
+
+# 应用生效:
+$ brew update
 ```
 
-在 `~/.bashrc` 中加入
+# 重置 Homebrew 源
 
 ```bash
-export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
+# 重置brew.git:
+$ cd "$(brew --repo)"
+$ git remote set-url origin https://github.com/Homebrew/brew.git
+
+# 重置homebrew-core.git:
+$ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+$ git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 ```
 
-**说明**
-
-本镜像源只镜像了 Homebrew 托管在 Bintray 上的二进制预编译包，所以只对这些二进制包有加速功能（Homebrew 大部分情况下使用该渠道下载安装软件）。
-
-
+至于homebrew-bottles，推荐直接去修改`.bash_profile`文件删除 HOMEBREW_BOTTLE_DOMAIN 那一行。
 
 #  Homebrew Cask
 
