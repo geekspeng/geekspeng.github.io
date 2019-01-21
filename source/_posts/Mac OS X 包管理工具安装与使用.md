@@ -1,7 +1,7 @@
 ---
 title: Mac OS X 包管理工具 Homebrew 安装与使用
-date: 2018-01-09
-updated: 2018-01-09
+date: 2018-01-08
+updated: 2018-01-08
 tags: [Mac,包管理工具,Homebrew]
 categories: [Mac]
 ---

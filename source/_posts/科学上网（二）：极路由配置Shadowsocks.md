@@ -54,5 +54,6 @@ cd /tmp && curl -k -o shadow.sh https://raw.githubusercontent.com/qiwihui/hiwifi
 # Shadowsocks账号设置
 
 在浏览器中登录极路由后台，完成配置后，点击开关开启即可，如果一切正常，下方状态会显示连接正常
-![](http://p15d1hccg.bkt.clouddn.com/15132641329660.jpg)
+
+![](/images/15132641329660.jpg)
 

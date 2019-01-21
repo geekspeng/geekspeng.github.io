@@ -81,19 +81,19 @@ Hello World
 
 当你打开 PyCharm 时，你会看见如下界面，点击 `Create New Project` ：
 
-![](http://p15d1hccg.bkt.clouddn.com/153731.jpg)
+![](/images/153731.jpg)
 
 
 
 选择 `Pure Python` ：
 
-![PyCharm 新项目](http://p15d1hccg.bkt.clouddn.com/153923.jpg)
+![](/images/153923.jpg)
 
 
 
 将你的项目路径位置中的 `untitled` 更改为 `helloworld` ，你所看到的界面细节应该类似于下方这番：
 
-![](http://p15d1hccg.bkt.clouddn.com/154212.jpg)
+![](/images/154212.jpg)
 
 
 
@@ -101,19 +101,19 @@ Hello World
 
 对侧边栏中的 `helloworld` 右击选中，并选择 `New` -> `Python File` ：
 
-![](http://p15d1hccg.bkt.clouddn.com/154351.jpg)
+![](/images/154351.jpg)
 
 
 
 你会被要求输入名字，现在输入 `hello` ：
 
-![](http://p15d1hccg.bkt.clouddn.com/154454.jpg)
+![](/images/154454.jpg)
 
 
 
 现在你便可以看见一个新的文件已为你开启：
 
-![](http://p15d1hccg.bkt.clouddn.com/155020.jpg)
+![](/images/155020.jpg)
 
 
 
@@ -127,13 +127,13 @@ print("hello world")
 
 现在右击你所输入的内容（无需选中文本），然后点击 `Run 'hello'` 。
 
-![](http://p15d1hccg.bkt.clouddn.com/154836.jpg)
+![](/images/154836.jpg)
 
 
 
 此刻你将会看到你的程序所输出的内容（它所打印出来的内容）：
 
-![](http://p15d1hccg.bkt.clouddn.com/154943.jpg)
+![](/images/154943.jpg)
 
 虽然只是刚开始的几个步骤，但从今以后，每当我们要求你创建一个新的文件时，记住只需在 `helloworld` 上右击并选择 -> `New` -> `Python File` 并继续如上所述步骤一般输入内容并运行即可。
 

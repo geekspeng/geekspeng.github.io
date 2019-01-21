@@ -11,7 +11,7 @@ categories: [科学上网]
 
 # Shadowsocks 原理
 
-![](http://p15d1hccg.bkt.clouddn.com/15132555841950.png)
+![](/images/15132555841950.png)
 
 Shadowsocks(ss) 是由 Clowwindy 开发的一款软件，其作用本来是加密传输资料。当然，也正因为它加密传输资料的特性，使得 GFW 没法将由它传输的资料和其他普通资料区分开来（上图），也就不能干扰我们访问那些「不存在」的网站了。
 
@@ -20,56 +20,56 @@ Shadowsocks(ss) 是由 Clowwindy 开发的一款软件，其作用本来是加�
 
 ## 注册AWS
 1. 点击注册进入注册页面
-![](http://p15d1hccg.bkt.clouddn.com/15132560890311.png)
+  ![](/images/15132560890311.png)
 
 2. 填写邮件地址，密码，账户名称
-![](http://p15d1hccg.bkt.clouddn.com/15132563312499.png)
+  ![](/images/15132563312499.png)
 
 3. 这里选择个人就好了，然后填写个人信息
-![](http://p15d1hccg.bkt.clouddn.com/15132568272500.png)
+  ![](/images/15132568272500.png)
 
 4. 填写信用卡信息
-![](http://p15d1hccg.bkt.clouddn.com/15136977189629.png)
-绑定完信用卡之后，信用卡会扣取1美元的费用，网上看的教程说后面会退还.
+  ![](/images/15136977189629.png)
+  绑定完信用卡之后，信用卡会扣取1美元的费用，网上看的教程说后面会退还.
 
 5. 电话验证
-填写完信息后让系统拨打你的电话，然后页面上会显示出一个PIN码，在电话上输入即可
+  填写完信息后让系统拨打你的电话，然后页面上会显示出一个PIN码，在电话上输入即可
 
 
 ## 创建 AWS 实例
 1. 点击右上角切换服务器机房，建议选择亚太地区的服务器，因为亚太地区的服务器相对于北美的服务器延迟要低一些，这里我选择 **东京**
-![](http://p15d1hccg.bkt.clouddn.com/15136024142885.png)
+  ![](/images/15136024142885.png)
 
 2. 点击左上角的服务选择 **EC2**
-![](http://p15d1hccg.bkt.clouddn.com/15136026702644.png)
+  ![](/images/15136026702644.png)
 
 3. 点击 **启动实例**
-![](http://p15d1hccg.bkt.clouddn.com/15136027931278.png)
+  ![](/images/15136027931278.png)
 
 4. 在 **AWS Marketplace** 搜索 **centos6** ,然后点击 **选择**
-![](http://p15d1hccg.bkt.clouddn.com/15136029683293.png)
+  ![](/images/15136029683293.png)
 
 5. 点击 **continue**
-![](http://p15d1hccg.bkt.clouddn.com/15136030558122.png)
+  ![](/images/15136030558122.png)
 
 6. 这里我们就直接选用免费的就可以了，然后点击 **下一步**
-![](http://p15d1hccg.bkt.clouddn.com/15136032510119.png)
+  ![](/images/15136032510119.png)
 
 7. 后面我们都使用默认配置，都直接点击下一步，直到 **配置安全组** 的时候，我们将类型改成 **所有流量**，然后点击 **审核和启动**
-![](http://p15d1hccg.bkt.clouddn.com/15136034503025.png)
+  ![](/images/15136034503025.png)
 
 8. 点击右下角的 **启动** 会弹出一个密钥窗口选择 **创建新密钥对** ，接着填写密钥名称，点击 **下载密钥** ，最后点击 **启动实例**
-![](http://p15d1hccg.bkt.clouddn.com/15136042148471.png)
+  ![](/images/15136042148471.png)
 
 9. 接着初始化主机，初始化完成后出现下面的这个界面，点击右下角的 **查看实例**
-![](http://p15d1hccg.bkt.clouddn.com/15136045186657.png)
+  ![](/images/15136045186657.png)
 
 ## 连接 AWS 实例
 1. 点击 **连接**
-![](http://p15d1hccg.bkt.clouddn.com/15136047734339.png)
+  ![](/images/15136047734339.png)
 
 2. 按照提示我们直接通过ssh连接，首先打开SSH客户端，我用的MAC自带SSH，所以直接打开终端（Windows可以根据提示使用PuTTY连接），并将路径切换到之前保存密钥的路径下，然后根据提示修改密钥的权限，最后复制下面的示例并将root改为centos（我们安装的centos系统的用户名是centos）
-![](http://p15d1hccg.bkt.clouddn.com/15136451779598.png)
+  ![](/images/15136451779598.png)
 
 ```
 Last login: Tue Dec 19 09:01:19 on ttys002
@@ -137,18 +137,18 @@ Enjoy it!
 **打开客户端，在「服务器设定」里新增服务器。然后依次填入服务器 IP、服务器端口、你设的密码和加密方式。**
 
 Mac 版客户端
-![](http://p15d1hccg.bkt.clouddn.com/15132596983585.png)
+![](/images/15132596983585.png)
 
 Win 版客户端
-![](http://p15d1hccg.bkt.clouddn.com/15132591141053.png)
+![](/images/15132591141053.png)
 
 **然后启用代理，就可以实现科学上网了**
 
 Mac 版客户端，点击打开Shadowsocks
-![](http://p15d1hccg.bkt.clouddn.com/15132597970585.png)
+![](/images/15132597970585.png)
 
 Win 版客户端，点击”启用系统代理”，选择PAC模式，在PAC中选择从xxx更新本地PAC
-![](http://p15d1hccg.bkt.clouddn.com/15132598862289.png)
+![](/images/15132598862289.png)
 
 
 ## 提升Shadowsocks服务器速度

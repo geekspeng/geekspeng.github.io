@@ -61,12 +61,12 @@ def 函数名 (参数列表):
 > >>> print(area.__doc__)
 > Returns the area of a circle with the given radius.
 > For example:
-> <>    >>> area(5.5)
->     95.033177771091246
+> >>> area(5.5)
+>  95.033177771091246
 > ```
->
-> Python还有一个很有用的工具——doctest，可用于自动运行文档字符串中的Python示例代码。这是一种不错的代码测试方式，还可帮助确保文档准确地描绘了函数。更详细的信息请参阅[http://docs.python.org/3/ library/ doctest.html](http://docs.python.org/3/%20library/%20doctest.html)。
 
+> Python还有一个很有用的工具——doctest，可用于自动运行文档字符串中的Python示例代码。这是一种不错的代码测试方式，还可帮助确保文档准确地描绘了函数。更详细的信息请参阅[http://docs.python.org/3/ library/ doctest.html](http://docs.python.org/3/%20library/%20doctest.html)。
+>
 > **提示**    函数并非必须包含return语句，如果函数没有包含return语句，Python将认为它以return None结束。这很常见：函数常被用于执行返回值无关紧要的任务，如在屏幕上打印输出。
 
 
@@ -201,13 +201,13 @@ $ python reference.py
 
 在设置`x`和`y`后，内存类似于下图1所示。当调用`add(x,y)`时，Python创建两个新变量——`a`和`b`，它们分别指向`x`和`y`的值，如图2所示。注意到没有复制实参的值，而只是给它们指定新名称，而函数将使用这些新名称来引用它们。将`a`和`b`相加后，函数返回，而`a`和`b`被自动删除。在整个函数调用过程中，`x`和`y`未受影响。
 
-![图1](http://p15d1hccg.bkt.clouddn.com/blog/180121/Id7e7AlKJ9.jpg)
+![](/images/Id7e7AlKJ9.jpg)
 
 图1 将x和y分别设置为3和4后的内存状态
 
 
 
-![mark](http://p15d1hccg.bkt.clouddn.com/blog/180121/j2K59ccDHG.jpg)
+![](/images/j2K59ccDHG.jpg)
 
 图2  刚调用add(x,y)后的内存状态：a和b分别指向x和y指向的值
 
@@ -247,7 +247,7 @@ $ python reference.py
 3. 将1赋给`x`，结果如下图所示。
 4. 函数set1结束后，x被删除。
 
-![mark](http://p15d1hccg.bkt.clouddn.com/blog/180121/3c4093j0dC.jpg)
+![](/images/3c4093j0dC.jpg)
 
 
 
