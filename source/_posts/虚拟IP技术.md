@@ -1,4 +1,15 @@
-[查看原文](http://www.xumenger.com/virtual-ip-20190220/)
+---
+title: 通过ARP协议实现VIP
+date: 2019-09-01
+updated: 2019-09-01
+tags: [keepalived,高可用]
+categories: [高可用]
+---
+
+IP 地址只是一个逻辑地址，在以太网中MAC 地址才是真正用来进行数据传输的物理地址，每台主机中都有一个ARP 高速缓存，存储**同一个网络内**的IP 地址与MAC 地址的对应关系，以太网中的主机发送数据时会先从这个缓存中查询目标IP 对应的MAC 地址，会向这个MAC 地址发送数据。操作系统会自动维护这个缓存。这就是整个实现的关键
+
+<!-- more -->
+
 
 ## 通过ARP协议实现VIP
 
@@ -28,7 +39,7 @@ IP 地址只是一个逻辑地址，在以太网中MAC 地址才是真正用来�
 
 这是一种简单的VIP 实现，通过MAC 的更改来实现切换。但也有一些局限性，因为实现于MAC 层，所以**无法跨网段**。也无法屏蔽掉后面的服务器的IP 地址
 
-想想[上一篇](http://www.xumenger.com/nginx-hc-ha-20190219/)介绍的场景，nginx 的IP 是要暴露到外网的，所以这种方案的VIP 可以吗？
+nginx 的IP 是要暴露到外网的，所以这种方案的VIP 可以吗？
 
 不过这种方案在内网做MySQL、Redis 的冗余还是可行的！
 
@@ -42,7 +53,7 @@ IP 地址只是一个逻辑地址，在以太网中MAC 地址才是真正用来�
 
 现实中数据包通过网络中的各种设备（路由器、服务器、交换机、网关等），经过数次的转发，从一端传达到另一端
 
-![图片](https://uploader.shimo.im/f/6EOdRoQ6y6IvGbsN.png!thumbnail?fileGuid=8Khhcpq6wYrV3dwh)
+![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/6EOdRoQ6y6IvGbsN.png!thumbnail)
 
 ## 基于VRRP协议实现VIP
 
@@ -50,7 +61,7 @@ VRRP（Virtual Router Redundancy Protocol，虚拟路由器冗余协议），VRR
 
 Keepalived 是Linux 下面实现VRRP 备份路由的高可靠性运行件。基于Keepalived 设计的服务模式能够真正做到主服务器和备份服务器故障时IP 瞬间无缝交接。二者结合，可以构架出比较稳定的软件LB 方案！
 
-![图片](https://uploader.shimo.im/f/PRuxQ7OyfC4YhXSQ.png!thumbnail?fileGuid=8Khhcpq6wYrV3dwh)
+![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/PRuxQ7OyfC4YhXSQ.png!thumbnail)
 
 ## 参考资料
 
