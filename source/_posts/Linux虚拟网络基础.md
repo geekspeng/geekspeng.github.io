@@ -6,8 +6,6 @@ tags: [Linux,网络]
 categories: [Linux]
 ---
 
-<!-- more -->
-
 # TAP/TUN
 
 TAP/TUN 是 Linux 内核实现的一对虚拟网络设备，TAP 工作在二层虚拟以太设备，TUN 工作在三层
