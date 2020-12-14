@@ -3,7 +3,7 @@ title: 使用virt-install安装虚拟机
 date: 2019-04-18
 updated: 2019-04-18
 tags: [Linux,虚拟化]
-categories: [Linux,虚拟化]
+categories: [虚拟化]
 ---
 
 # 准备工作

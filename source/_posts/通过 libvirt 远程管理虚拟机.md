@@ -3,7 +3,7 @@ title: 通过 libvirt 远程管理虚拟机
 date: 2019-04-16
 updated: 2019-04-16
 tags: [Linux,虚拟化]
-categories: [Linux,虚拟化]
+categories: [虚拟化]
 ---
 
 # 通过qemu+ssh方式

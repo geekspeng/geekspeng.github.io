@@ -3,7 +3,7 @@ title: Linux下查看网卡驱动和驱动信息
 date: 2018-11-27
 updated: 2018-11-27
 tags: [Linux,tcpdump]
-categories: [Linux,tcpdump]
+categories: [Linux]
 ---
 
 # tcpdump简介

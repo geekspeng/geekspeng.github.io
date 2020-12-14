@@ -3,7 +3,7 @@ title: Centos7 CPU 隔离 和 绑定
 date: 2019-05-11
 updated: 2019-05-11
 tags: [Linux,虚拟化]
-categories: [Linux,虚拟化]
+categories: [虚拟化]
 ---
 
 # 隔离CPU核心
