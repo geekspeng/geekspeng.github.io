@@ -6,25 +6,6 @@ tags: [python,pip]
 categories: [python]
 ---
 
-* 安装 pip
-
-```bash
-# yum -y install python-pip
-```
-
-* 使用豆瓣pip源加快python包安装速度
-
-```
-# mkdir -p ~/.pip
-# vim ~/.pip/pip.conf
-[global]
-index-url = https://pypi.doubanio.com/simple
-[install]
-trusted-host=pypi.doubanio.com
-```
-
-<!-- more -->
-
 # 准备工作
 
 * 安装 pip
@@ -40,6 +21,8 @@ index-url = https://pypi.doubanio.com/simple
 [install]
 trusted-host=pypi.doubanio.com
 ```
+<!-- more -->
+
 # 下载Python包并生成索引
 
 ## 创建软件包存放目录

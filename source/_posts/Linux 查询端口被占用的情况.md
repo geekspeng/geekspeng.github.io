@@ -15,6 +15,8 @@ sshd     6622 root    4u  IPv6  36224      0t0  TCP *:ssh (LISTEN)
 sshd    31358 root    3u  IPv4 122192      0t0  TCP node1:ssh->192.168.46.1:64212 (ESTABLISHED)
 sshd    31914 root    3u  IPv4 126124      0t0  TCP node1:ssh->192.168.46.1:62861 (ESTABLISHED)
 ```
+<!-- more -->
+
 如果提示 bash: lsof: command not found  则通过yum 安装后重试即可
 
 ```bash

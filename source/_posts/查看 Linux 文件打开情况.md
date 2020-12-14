@@ -6,6 +6,8 @@ tags: [Linux]
 categories: [Linux]
 ---
 
+# Linux 下有哪些文件
+
 在介绍lsof命令之前，先简单说一下，linux主要有哪些文件：
 
 * 普通文件
@@ -18,17 +20,6 @@ categories: [Linux]
 
 <!-- more -->
 
-# Linux 下有哪些文件
-
-在介绍lsof命令之前，先简单说一下，linux主要有哪些文件：
-
-* 普通文件
-* 目录
-* 符号链接
-* 面向块的设备文件
-* 面向字符的设备文件
-* 管道和命名管道
-* 套接字
 # lsof 命令实用用法介绍
 
 lsof，是list open files的简称

@@ -6,14 +6,6 @@ tags: [Linux,虚拟化]
 categories: [Linux,虚拟化]
 ---
 
-* 安装 virt-install
-
-  ```bash
-  # yum install -y virt-install
-  ```
-
-<!-- more -->
-
 # 准备工作
 
 安装 virt-install
@@ -28,7 +20,10 @@ categories: [Linux,虚拟化]
 ```bash
 qemu-img create -f qcow2 /tmp/centos7.qcow2 10G
 ```
+<!-- more -->
+
 注意qemu 用户需要有/tmp/centos7.qcow2 访问权限
+
 * 以ISO文件作为cdrom，qcow2文件作为第一块虚拟硬盘，启动虚拟机
 ```bash
 virt-install \

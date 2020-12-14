@@ -6,10 +6,6 @@ tags: [Linux,网络]
 categories: [Linux]
 ---
 
-TAP/TUN 是 Linux 内核实现的一对虚拟网络设备，TAP 工作在二层虚拟以太设备，TUN 工作在三层
-
-基于 TAP 驱动，即可实现虚拟机 vNIC 的功能，虚拟机的每个 vNIC 都与一个 TAP 设备相连，vNIC 之于 TAP 就如同 NIC 之于 eth
-
 <!-- more -->
 
 # TAP/TUN
@@ -19,6 +15,8 @@ TAP/TUN 是 Linux 内核实现的一对虚拟网络设备，TAP 工作在二层�
 基于 TAP 驱动，即可实现虚拟机 vNIC 的功能，虚拟机的每个 vNIC 都与一个 TAP 设备相连，vNIC 之于 TAP 就如同 NIC 之于 eth
 
 ![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/spYkMDTpsJUD0VI8.png!thumbnail)
+
+<!-- more -->
 
 甚至连数据结构，tap与tun的定义都是同一个，两者仅仅是通过一个Flag来区分
 

@@ -6,14 +6,10 @@ tags: [keepalived,高可用]
 categories: [高可用]
 ---
 
-在 master->backup 模式下，一旦主库宕掉， 虚拟IP会自动漂移到从库，当主库修复后，keepalived启动后，还会把虚拟IP抢过来，即使你设置nopreempt（不抢占）的方式抢占IP的动作也会发生
-
-<!-- more -->
-
 * 在 master->backup 模式下，一旦主库宕掉， 虚拟IP会自动漂移到从库，当主库修复后，keepalived启动后，还会把虚拟IP抢过来，即使你设置nopreempt（不抢占）的方式抢占IP的动作也会发生
 * 在 backup->backup 模式下，关闭 VIP抢占模式，当主库宕掉后虚拟IP会自动漂移到从库上，当原主恢复之后重启keepalived服务，并不会抢占新主的虚拟IP， 即使是优先级高于从库的优先级别，也不会抢占 IP
 
-
+<!-- more -->
 
 示例
 

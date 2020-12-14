@@ -6,13 +6,11 @@ tags: [Linux,CentOS]
 categories: [Linux]
 ---
 
-CentOS的版本号信息一般存放在配置文件当中，在CentOS中，与其版本相关的配置文件中都有centos关键字，该文件一般存放在/etc/目录下，所以说我们可以直接在该文件夹下搜索相关的文件
-
-<!-- more -->
-
 # 查看 CentOS 的版本号
 
 CentOS的版本号信息一般存放在配置文件当中，在CentOS中，与其版本相关的配置文件中都有centos关键字，该文件一般存放在/etc/目录下，所以说我们可以直接在该文件夹下搜索相关的文件
+
+<!-- more -->
 
 ```bash
 [root@node1 ~]# ll /etc/*centos*

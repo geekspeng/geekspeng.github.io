@@ -7,12 +7,6 @@ categories: [MariaDB]
 
 ---
 
-MariaDB 单机多实例配置说明
-
-<!-- more -->
-
-
-
 # 安装mariadb
 
 ```bash
@@ -24,6 +18,8 @@ MariaDB 单机多实例配置说明
 # mkdir -p /mariadb/data{3306,3307,3308}
 # chown -R mysql:mysql /mariadb
 ```
+<!-- more -->
+
 # 初始化数据库文件
 
 ```bash

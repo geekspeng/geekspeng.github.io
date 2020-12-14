@@ -6,13 +6,13 @@ tags: [vscode,python]
 categories: [python]
 ---
 
-默认情况下，Python 扩展寻找并使用它在系统路径中找到的第一个 Python 解释器。 如果它没有找到解释器，它就会发出警告。 在 macOS 上，如果您使用的是安装在 os 上的 Python 解释器，扩展还会发出警告，因为您通常希望使用直接安装的解释器。 无论哪种情况，都可以通过在用户设置中将 python.disableInstallationCheck 设置为 true 来禁用这些警告。
-
-<!-- more -->
-
 # 配置Python环境
 
 >默认情况下，Python 扩展寻找并使用它在系统路径中找到的第一个 Python 解释器。 如果它没有找到解释器，它就会发出警告。 在 macOS 上，如果您使用的是安装在 os 上的 Python 解释器，扩展还会发出警告，因为您通常希望使用直接安装的解释器。 无论哪种情况，都可以通过在用户设置中将 python.disableInstallationCheck 设置为 true 来禁用这些警告。
+
+
+
+<!-- more -->
 
 
 1. 要选择的解释器，请从命令选项板（⇧⌘P）调用Python：Select Interpreter命令

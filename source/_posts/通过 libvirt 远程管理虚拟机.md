@@ -6,23 +6,6 @@ tags: [Linux,虚拟化]
 categories: [Linux,虚拟化]
 ---
 
-* 通过qemu+ssh连接方式比较简单，只要能通过ssh远程访问，命令如下：
-
-  ```bash
-  # virsh -c qemu+ssh://root@192.168.1.166/system
-  ```
-
-  如果2个节点设置了互信，免密钥登录，可直接执行virsh相关命令，
-
-  ```bash
-  # virsh -c qemu+ssh://root@192.168.1.166/system list
-   Id    名称                         状态
-  ----------------------------------------------------
-   3     vm01                           running
-  ```
-
-<!-- more -->
-
 # 通过qemu+ssh方式
 
 通过qemu+ssh连接方式比较简单，只要能通过ssh远程访问，命令如下：
@@ -38,7 +21,10 @@ categories: [Linux,虚拟化]
 ----------------------------------------------------
  3     vm01                           running
 ```
+<!-- more -->
+
 # 通过qemu+tcp方式
+
 被控端上：
 
 修改/etc/sysconfig/libvirtd,开启以下2个配置项：

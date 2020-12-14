@@ -7,14 +7,6 @@ categories: [Linux,虚拟化]
 
 ---
 
-* 安装 virt
-
-  ```bash
-  # yum install qemu-kvm libvirt virt-install virt-manager
-  ```
-
-<!-- more -->
-
 # 安装
 
 ```bash
@@ -26,6 +18,9 @@ categories: [Linux,虚拟化]
 
 * virsh-v  只显示版本号
 * virsh-V  显示版本的详细信息
+
+<!-- more -->
+
 ## 查看实例
 
 * virsh list查看活动的虚拟机
