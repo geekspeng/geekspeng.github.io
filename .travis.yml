@@ -1,18 +1,22 @@
-sudo: false
-language: node_js
+language: node_js   #设置语言
 node_js:
-  - 10 # use nodejs v10 LTS
+  - 10 #  #设置相应的版本
 cache: npm
+script:
+  - hexo clean    #清除
+  - hexo generate #生成
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "geekspeng"   #修改成自己的github用户名
+  - git config user.email "geekspeng@icloud.com"   #修改成自己的GitHub邮箱
+  - git remote add master git@github.com:geekspeng/geekspeng.github.io.git
+  - git add .
+  - git commit -am "update by Travis-CI"
+  - git push --force "https://${GH_TOKEN}@${GH_REF}" master:master #GH_token就是在travis中设置的token
 branches:
   only:
-    - develop # build master branch only
-script:
-  - hexo generate # generate static files
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  on:
-    branch: develop
-  local-dir: public
+  - develop  #只监测这个分支，一有动静就开始构建
+env:
+    global:
+        - GH_REF: github.com/geekspeng/geekspeng.github.io.git
