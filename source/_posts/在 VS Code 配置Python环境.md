@@ -13,6 +13,8 @@ categories: [python]
 # 配置Python环境
 
 >默认情况下，Python 扩展寻找并使用它在系统路径中找到的第一个 Python 解释器。 如果它没有找到解释器，它就会发出警告。 在 macOS 上，如果您使用的是安装在 os 上的 Python 解释器，扩展还会发出警告，因为您通常希望使用直接安装的解释器。 无论哪种情况，都可以通过在用户设置中将 python.disableInstallationCheck 设置为 true 来禁用这些警告。
+
+
 1. 要选择的解释器，请从命令选项板（⇧⌘P）调用Python：Select Interpreter命令
 
 ![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/bMCUA556OYUMoXXt.png!thumbnail)
@@ -26,6 +28,8 @@ categories: [python]
 ![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/b88B7rOfjgoXgb5m.png!thumbnail)
 
 >注意: 在 Windows 上，VS 代码需要一点时间来检测可用的 conda 环境。 在此过程中，您可能会在环境的路径之前看到"(缓存)"。 该标签表明 VS Code 目前正在处理该环境的缓存信息。
+
+
 3. 从列表中选择的解释器后会自动添加 python.pythonPath （解释器的路径）条目到工作区设置中。
 
 ![图片](https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/yCxCyWYBU50EjygS.png!thumbnail)
@@ -43,6 +47,8 @@ categories: [python]
 使用 Python: Select Interpreter 命令更改解释器不会影响已经打开的终端面板。
 
 >提示: 在某个 Python 环境被激活的 shell 中启动 VS Code 并不会自动激活默认集成终端中选定的环境。 使用终端: 在运行 VS Code后创建新的集成终端命令即可自动激活选定的Python环境
+
+
 ## 选择Python调试环境
 
 默认情况下，Python.pythonPath 设置指定用于调试的 Python 解释器。 但是，如果在 launch.json 的调试配置中有 pythonPath 属性，则使用该解释器。
