@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "3ffdaa6e"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft YaHei:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT, geekspeng, Python, ML" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="geekspeng">
+<meta property="og:url" content="http://geekspeng.cn/404.html">
+<meta property="og:site_name" content="geekspeng">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T01:49:31.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="geekspeng">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.1',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://geekspeng.cn/404.html"/>
+
+
+
+
+
+  <title>使用 Flask 处理文件上传 | geekspeng</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?fd7738e99e6dceeb10fc01b9b5dba182";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">geekspeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">人生苦短，我用python</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geekspeng.cn/2020/04/12/使用 Flask 处理文件上传.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="geekspeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/geekspeng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="geekspeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">使用 Flask 处理文件上传</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-12T00:00:00+00:00">2020-04-12</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-12T00:00:00+00:00">2020-04-12</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Flask/" itemprop="url" rel="index"><span itemprop="name">Flask</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/12/使用 Flask 处理文件上传.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/12/使用 Flask 处理文件上传.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/12/使用 Flask 处理文件上传.html" class="leancloud_visitors" data-flag-title="使用 Flask 处理文件上传">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">16k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:16</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="使用-Flask-处理文件上传"><a href="#使用-Flask-处理文件上传" class="headerlink" title="使用 Flask 处理文件上传"></a>使用 Flask 处理文件上传</h1><p>Web 应用程序的一个常见特性是允许用户将文件上传到服务器。在 <a href="https://tools.ietf.org/html/rfc1867" target="_blank" rel="noopener">RFC 1867</a> 中协议记录了客户端上传文件的机制，我们最喜欢的 Web 框架 Flask 完全支持这一机制，但是对于许多开发者来说，还有许多实现细节未遵循该正式规范。诸如在何处存储上传的文件，如何事后使用它们，或者如何保护服务器不受恶意文件上传的影响，这些都会产生很多混乱和不确定性。</p>
+<a id="more"></a>
+<p>在本文中，我将向你展示如何为 Flask 服务器实现强大的文件上传功能，该功能不仅支持基于 Web 浏览器中的标准文件上传并且与基于 JavaScript 的上传小部件兼容：</p>
+<p><img src="https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/1602214447739-a6c5a7a3-75ec-4082-87e7-efb8db03f878.gif" alt=""></p>
+<h2 id="基本文件上传表单"><a href="#基本文件上传表单" class="headerlink" title="基本文件上传表单"></a>基本文件上传表单</h2><p>从高层次的角度来看，上传文件的客户端与其他任何表单数据提交一样。 换句话说，你必须定义一个包含文件字段的 HTML 表单。</p>
+<p>下面是一个简单的 HTML 页面，该表单接受一个文件:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/1602214835402-35423468-f037-42a5-95b0-10a06591fc04.png" alt=""><br>你可能知道，<code>&lt;form&gt;</code> 元素的 method 属性可以是 <code>GET</code> 或 <code>POST</code>。使用 <code>GET</code> 时，数据将在请求 URL 的查询字符串中提交，而使用 <code>POST</code> 时，数据将进入请求主体。在表单中包含文件时，必须使用 <code>POST</code>，因为不可能在查询字符串中提交文件数据。</p>
+<p>没有文件的表单通常不包含 <code>&lt;form&gt;</code> 元素中的 <code>enctype</code> 属性。此属性定义浏览器在将数据提交到服务器之前应该如何格式化数据。HTML 规范为其定义了三个可能的值：</p>
+<ul>
+<li><code>application/x-www-form-urlencoded</code>: </li>
+</ul>
+<p>这是默认格式，也是不包含文件字段的表单的最佳格式</p>
+<ul>
+<li><code>multipart/form-data</code>: </li>
+</ul>
+<p>如果表单中至少有一个字段是文件字段，则需要此格式</p>
+<ul>
+<li><code>text/plain</code>: </li>
+</ul>
+<p>这种格式没有实际用途，所以你应该忽略它</p>
+<p>实际的文件字段是我们用于大多数其他表单字段的标准 <code>&lt;input&gt;</code> 元素，其类型设置为 <code>file</code>。 在上面的示例中，我没有包含任何其他属性，但是file字段支持两个有时有用的属性：</p>
+<ul>
+<li><code>multiple</code>: </li>
+</ul>
+<p>可用于允许在单个文件字段中上载多个文件。例如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">multiple</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>accept</code>: </li>
+</ul>
+<p>可以用于筛选允许的文件类型，这些文件类型可以通过文件扩展名或媒体类型选择。例子:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"doc_file"</span> <span class="attr">accept</span>=<span class="string">".doc,.docx"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"image_file"</span> <span class="attr">accept</span>=<span class="string">"image/*"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>## </p>
+<h2 id="使用-Flask-接受文件提交"><a href="#使用-Flask-接受文件提交" class="headerlink" title="使用 Flask 接受文件提交"></a>使用 Flask 接受文件提交</h2><p>对于常规表单，Flask 提供了对 <code>request.form</code> 字典中提交的表单字段的访问。 但是，文件字段包含在<code>request.files</code> 字典中。 <code>request.form</code> 和 <code>request.files</code> 字典实际上是“multi-dicts”，它是一种支持重复键的专门字典实现。 这是必要的，因为表单可以包含多个具有相同名称的字段，通常情况下是由多组复选框组成。 对于允许多个文件的文件字段，也会发生这种情况。</p>
+<p>暂时忽略诸如验证和安全性等重要方面，下面简短的 Flask 应用程序接受使用上一节中定义的表单上传的文件，并将提交的文件写入当前目录：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, url_for</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="meta">@app.route('/', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload_file</span><span class="params">()</span>:</span></span><br><span class="line">    uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">    <span class="keyword">if</span> uploaded_file.filename != <span class="string">''</span>:</span><br><span class="line">        uploaded_file.save(uploaded_file.filename)</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>upload_file() 函数使用@app.route装饰，以便在浏览器发送POST请求时调用该函数。 请注意，同一个根 URL 是如何在两个视图函数之间进行拆分的，并将 <code>index()</code> 设置为接受 <code>GET</code> 请求，将 <code>upload_file``()</code> 上传为 <code>POST</code> 请求。</p>
+<p><code>uploaded_file</code> 变量保存提交的文件对象。 这是 Flask 从 Werkzeug 导入的 <code>FileStorage</code> 类的实例。</p>
+<p><code>FileStorage</code> 中的 <code>filename</code> 属性提供客户端提交的文件名。如果用户提交表单时没有在 file 字段中选择文件，那么文件名将是一个空字符串，因此始终检查文件名以确定文件是否可用是很重要的。</p>
+<p>Flask 收到文件提交后，不会自动将其写入磁盘。 这实际上是一件好事，因为它使应用程序有机会查看和验证文件提交，这一点将在后面看到。 可以从 stream 属性访问实际文件数据。 如果应用程序只想将文件保存到磁盘，则可以调用 <code>save()</code> 方法，并将所需路径作为参数传递。 如果未调用文件的 <code>save()</code> 方法，则该文件将被丢弃。</p>
+<p>是否要使用此应用程序测试文件上传？ 为你的应用程序创建目录，并将上面的代码编写为 app.py。 然后创建一个模板子目录，并将上一节中的HTML页面编写为templates/index.html。 创建一个虚拟环境并在其上安装Flask，然后使用 <code>flask run</code> 运行该应用程序。 每次提交文件时，服务器都会把它的副本写到当前目录中。</p>
+<p>在继续讨论安全性主题之前，我将讨论上面的代码的一些变体，你可能会发现这些变体很有用。 如前所述，可以将文件上传字段配置为接受多个文件。 如果像上面那样使用 <code>request.files[&#39;file&#39;]</code>，则只会得到一个提交的文件，但是使用 <code>getlist()</code> 方法，你可以在for循环中访问所有文件：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> uploaded_file <span class="keyword">in</span> request.files.getlist(<span class="string">'file'</span>):</span><br><span class="line">        <span class="keyword">if</span> uploaded_file.filename != <span class="string">''</span>:</span><br><span class="line">            uploaded_file.save(uploaded_file.filename)</span><br></pre></td></tr></table></figure></p>
+<p>许多人在 Flask 中编写表单处理路由时，对 GET 和 POST 请求使用单个视图函数。使用单视图函数的示例应用程序的版本编码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">        <span class="keyword">if</span> uploaded_file.filename != <span class="string">''</span>:</span><br><span class="line">            uploaded_file.save(uploaded_file.filename)</span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>最后，如果使用 <a href="https://flask-wtf.readthedocs.io/en/stable/" target="_blank" rel="noopener">Flask-WTF</a> 扩展来处理表单，则可以使用 <code>FileField</code> 对象上传文件。到目前为止，你看到的例子中使用的表单可以使用 Flask-WTF 编写如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_wtf <span class="keyword">import</span> FlaskForm</span><br><span class="line"><span class="keyword">from</span> flask_wtf.file <span class="keyword">import</span> FileField</span><br><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> SubmitField</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">    file = FileField(<span class="string">'File'</span>)</span><br><span class="line">    submit = SubmitField(<span class="string">'Submit'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>注意，<code>FileField</code> 对象来自 <code>flask_wtf</code> 包，与大多数其他字段类不同，后者直接从 <code>wtforms</code> 包导入。Flask-WTF 为文件字段提供了两个验证器，FileRequired 和 FileAllowed，前者执行类似于空字符串检查的检查，后者确保文件扩展名包含在允许的扩展名列表中。</p>
+<p>当您使用 Flask-WTF 表单时，file 字段对象的 <code>data</code> 属性指向 FileStorage 实例，因此将文件保存到磁盘的工作方式与上面的示例相同。</p>
+<h2 id="保护文件上传"><a href="#保护文件上传" class="headerlink" title="保护文件上传"></a>保护文件上传</h2><p>上一节中给出的文件上传示例是一个非常简单的实现，不是很健壮。Web 开发中最重要的规则之一是永远不要信任客户提交的数据，因此在使用常规表单时，像 Flask-WTF 这样的扩展会在接受表单和整合数据到应用程序中之前对所有字段进行严格验证。对于包含文件字段的表单，也需要进行验证，因为如果不进行文件验证，服务器将为攻击敞开大门。例如:</p>
+<ul>
+<li>攻击者可以上传一个非常大的文件，以至于服务器中的磁盘空间完全被填满，从而导致服务器出现故障</li>
+<li>攻击者可以使用文件名（例如../../../.bashrc或类似文件）的上传请求，以试图欺骗服务器重写系统配置文件。</li>
+<li>攻击者可以上传带有病毒或其他类型恶意软件的文件到应用程序需要使用的位置，例如，用户头像<br>### <h3 id="限制上传文件的大小"><a href="#限制上传文件的大小" class="headerlink" title="限制上传文件的大小"></a>限制上传文件的大小</h3>为了防止客户端上传非常大的文件，您可以使用 Flask 提供的配置选项。<code>MAX_CONTENT_LENGTH</code>  选项控制请求主体可以拥有的最大大小。虽然这不是一个特定于文件上传的选项，但设置一个最大的请求体大小有效地使 Flask  使用413状态码丢弃大于允许的请求体大小的请求</li>
+</ul>
+<p>让我们修改上一节中的 app.py 示例，只接受最大为1 MB 的请求:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.config[<span class="string">'MAX_CONTENT_LENGTH'</span>] = <span class="number">1024</span> * <span class="number">1024</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你试图上传一个大于1 MB 的文件，应用程序现在将拒绝它。</p>
+<h3 id="验证文件名"><a href="#验证文件名" class="headerlink" title="验证文件名"></a>验证文件名</h3><p>我们不能完全相信客户端提供的文件名是有效的和可以安全使用的，所以随上传文件一起提供的文件名必须经过验证。</p>
+<p>要执行的一个非常简单的验证是确保文件扩展名是应用程序愿意接受的扩展名，这与使用 Flask-WTF 时F <code>FileAllowed</code> 验证器所做的类似。假设应用程序接受图像，那么它可以配置允许的文件扩展名列表:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] = [<span class="string">'.jpg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>对于每个上传的文件，应用程序可以确保文件扩展名是允许的:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filename = uploaded_file.filename</span><br><span class="line"><span class="keyword">if</span> filename != <span class="string">''</span>:</span><br><span class="line">    file_ext = os.path.splitext(filename)[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> current_app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>]:</span><br><span class="line">        abort(<span class="number">400</span>)</span><br></pre></td></tr></table></figure></p>
+<p>使用这种逻辑，任何不在允许的文件扩展名的文件名，都会出现400错误。</p>
+<p>除了文件扩展名之外，验证文件名以及提供的任何路径也很重要。 如果你的应用程序不关心客户端提供的文件名，则处理上传的最安全方法是忽略客户端提供的文件名，而是生成自己的文件名，然后传递给 <code>save()</code> 方法。 这种技术工作良好的示例是头像上传。 每个用户的头像都可以使用用户 ID 保存为文件名，因此客户端提供的文件名可以丢弃。 如果你的应用程序使用 Flask-Login，则可以实现以下 <code>save()</code> 调用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uploaded_file.save(os.path.join(<span class="string">'static/avatars'</span>, current_user.get_id()))</span><br></pre></td></tr></table></figure></p>
+<p>在其他情况下，保留客户端提供的文件名可能更好，因此必须首先清理文件名。对于这些情况，Werkzeug 提供了 <a href="https://werkzeug.palletsprojects.com/en/1.0.x/utils/#werkzeug.utils.secure_filename" target="_blank" rel="noopener">secure_filename()</a> 函数。让我们通过在 Python shell 中运行一些测试来看看这个函数是如何工作的:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> werkzeug.utils <span class="keyword">import</span> secure_filename</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>secure_filename(<span class="string">'foo.jpg'</span>)</span><br><span class="line"><span class="string">'foo.jpg'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>secure_filename(<span class="string">'/some/path/foo.jpg'</span>)</span><br><span class="line"><span class="string">'some_path_foo.jpg'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>secure_filename(<span class="string">'../../../.bashrc'</span>)</span><br><span class="line"><span class="string">'bashrc'</span></span><br></pre></td></tr></table></figure></p>
+<p>正如你在示例中看到的，无论文件名有多么复杂或多么恶意，secure_filename()  函数都将其缩减为一个单位文件名。</p>
+<p>让我们将 <code>secure_filename()</code> 合并到示例上传服务器中，并添加一个配置变量，该变量定义文件上传的专用位置。下面是带有安全文件名的完整 app.py 源文件:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, url_for, abort</span><br><span class="line"><span class="keyword">from</span> werkzeug.utils <span class="keyword">import</span> secure_filename</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'MAX_CONTENT_LENGTH'</span>] = <span class="number">1024</span> * <span class="number">1024</span></span><br><span class="line">app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] = [<span class="string">'.jpg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>]</span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = <span class="string">'uploads'</span></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="meta">@app.route('/', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload_files</span><span class="params">()</span>:</span></span><br><span class="line">    uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">    filename = secure_filename(uploaded_file.filename)</span><br><span class="line">    <span class="keyword">if</span> filename != <span class="string">''</span>:</span><br><span class="line">        file_ext = os.path.splitext(filename)[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>]:</span><br><span class="line">            abort(<span class="number">400</span>)</span><br><span class="line">        uploaded_file.save(os.path.join(app.config[<span class="string">'UPLOAD_PATH'</span>], filename))</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>### </p>
+<blockquote>
+<p>注意<br>secure_filename 函数将过滤所有非ASCII字符，因此，如果filename 是 “头像.jpg”之类的，则结果为”jpg”，但没有格式，这是个问题，我建议使用uuid模块重命名上传的文件，以避免出现上述情况。</p>
+</blockquote>
+<h3 id="验证文件内容"><a href="#验证文件内容" class="headerlink" title="验证文件内容"></a>验证文件内容</h3><p>我将要讨论的第三层验证是最复杂的。如果您的应用程序接受某种文件类型的上传，那么理想情况下，它应该执行某种形式的内容验证，并拒绝任何不同类型的文件。</p>
+<p>如何实现内容验证在很大程度上取决于应用程序接受的文件类型。对于本文中的示例应用程序，我使用的是图像，因此可以使用 Python 标准库中的  <a href="https://docs.python.org/3/library/imghdr.html" target="_blank" rel="noopener">imghdr</a> 包验证文件头实际上是一个图像。</p>
+<p>让我们编写一个 <code>validate_image()</code> 函数，对图像执行内容验证:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imghdr</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_image</span><span class="params">(stream)</span>:</span></span><br><span class="line">    header = stream.read(<span class="number">512</span>)</span><br><span class="line">    stream.seek(<span class="number">0</span>)</span><br><span class="line">    format = imghdr.what(<span class="keyword">None</span>, header)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> format:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'.'</span> + (format <span class="keyword">if</span> format != <span class="string">'jpeg'</span> <span class="keyword">else</span> <span class="string">'jpg'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这个函数以一个字节流作为参数。它首先从流中读取512个字节，然后重置流指针，因为稍后当调用 save ()函数时，我们希望它看到整个流。前512字节的图像数据将足以识别图像的格式。</p>
+<p>如果第一个参数是文件名，<code>imghdr.what()</code> 函数可以查看存储在磁盘上的文件; 如果第一个参数是 <code>None</code>，数据在第二个参数中传递，则可以查看存储在内存中的数据。<code>FileStorage</code> 对象为我们提供了一个流，因此最方便的选项是从它中读取安全数量的数据，并在第二个参数中将其作为字节序列传递。</p>
+<p>imghdr.what() 的返回值是检测到的图像格式。该函数支持多种格式，其中包括流行的 <code>jpeg</code>、 <code>png</code> 和 <code>gif</code>。如果未检测到已知的图像格式，则返回值为 <code>None</code>。如果检测到格式，则返回该格式的名称。最方便的是将格式作为文件扩展名返回，因为应用程序可以确保检测到的扩展名与文件扩展名匹配，所以 validate_image() 函数将检测到的格式转换为文件扩展名。这很简单，只需为除 <code>jpeg</code> 外的所有图像格式添加一个点作为前缀，<code>jpeg</code> 除外，通常使用 .jpg扩展名。</p>
+<p>下面是完整的 app.py，包含前面几节中的所有特性和内容验证:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imghdr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, url_for, abort</span><br><span class="line"><span class="keyword">from</span> werkzeug.utils <span class="keyword">import</span> secure_filename</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'MAX_CONTENT_LENGTH'</span>] = <span class="number">1024</span> * <span class="number">1024</span></span><br><span class="line">app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] = [<span class="string">'.jpg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>]</span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = <span class="string">'uploads'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_image</span><span class="params">(stream)</span>:</span></span><br><span class="line">    header = stream.read(<span class="number">512</span>)</span><br><span class="line">    stream.seek(<span class="number">0</span>) </span><br><span class="line">    format = imghdr.what(<span class="keyword">None</span>, header)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> format:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'.'</span> + (format <span class="keyword">if</span> format != <span class="string">'jpeg'</span> <span class="keyword">else</span> <span class="string">'jpg'</span>)</span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="meta">@app.route('/', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload_files</span><span class="params">()</span>:</span></span><br><span class="line">    uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">    filename = secure_filename(uploaded_file.filename)</span><br><span class="line">    <span class="keyword">if</span> filename != <span class="string">''</span>:</span><br><span class="line">        file_ext = os.path.splitext(filename)[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] <span class="keyword">or</span> \</span><br><span class="line">                file_ext != validate_image(uploaded_file.stream):</span><br><span class="line">            abort(<span class="number">400</span>)</span><br><span class="line">        uploaded_file.save(os.path.join(app.config[<span class="string">'UPLOAD_PATH'</span>], filename))</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure></p>
+<p>在视图函数中唯一的变化就是加入了最后一个验证逻辑:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] <span class="keyword">or</span> \</span><br><span class="line">             file_ext != validate_image(uploaded_file.stream):</span><br><span class="line">         abort(<span class="number">400</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这个扩展检查首先确保文件扩展名在允许的列表中，然后确保通过查看数据流检测到的文件扩展名与文件扩展名相同。</p>
+<p>在测试这个版本的应用程序之前，创建一个名为 <em>uploads</em> 的目录(或者你在 <code>UPLOAD_PATH</code>  配置变量中定义的路径) ，以便可以将文件保存在那里。</p>
+<h2 id="使用上传的文件"><a href="#使用上传的文件" class="headerlink" title="使用上传的文件"></a>使用上传的文件</h2><p>你现在知道如何处理文件上传。对于某些应用程序，这就是所需要的全部内容，因为这些文件用于某些内部进程。但是对于大量的应用程序，特别是那些具有社交功能的应用程序，比如头像，用户上传的文件必须与应用程序集成。以 <code>avatar</code> 为例，一旦用户上传了他们的 avatars 图片，任何提到用户名的地方都需要上传的图片显示在侧面。</p>
+<p>我将文件上传分为两大类，具体取决于用户上传的文件是供公众使用还是对每个用户私有。 本文中多次讨论过的 <code>avatar</code> 图像显然属于第一类，因为这些 <code>avatar</code> 旨在与其他用户公开共享。 另一方面，对上传的图像执行编辑操作的应用程序可能在第二类中，因为你希望每个用户只能访问自己的图像。</p>
+<h3 id="公共文件上传"><a href="#公共文件上传" class="headerlink" title="公共文件上传"></a>公共文件上传</h3><p>当图像属于公共性质时，使图像可供应用程序使用的最简单方法是将上传目录放在应用程序的静态文件夹中。例如，可以在 static 中创建 <em>avatars</em> 子目录，然后使用用户 id 作为名称在该位置保存头像。</p>
+<p>使用 url_for() 函数以与应用程序的常规静态文件相同的方式引用存储在静态文件夹的子目录中的这些上传文件。 我之前建议在保存上传的头像图像时使用用户 id 作为文件名。这就是图片保存的方式:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uploaded_file.save(os.path.join(<span class="string">'static/avatars'</span>, current_user.get_id()))</span><br></pre></td></tr></table></figure></p>
+<p>使用这个实现，给定一个用户 id，可以生成用户头像的 URL 如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_for(<span class="string">'static'</span>, filename=<span class="string">'avatars/'</span> + str(user_id))</span><br></pre></td></tr></table></figure></p>
+<p>或者，可以将上传保存到静态文件夹外的目录中，然后可以添加新的路由来为其提供服务。在示例 app.py 应用程序文件中，上传的文件保存到 <code>UPLOAD_PATH</code>  配置变量中设置的位置。为了从该位置提供这些文件，我们可以实现以下路由:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> send_from_directory</span><br><span class="line"><span class="meta">@app.route('/uploads/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(app.config[<span class="string">'UPLOAD_PATH'</span>], filename)</span><br></pre></td></tr></table></figure></p>
+<p>这个解决方案比在静态文件夹中存储上传的一个优点是，在返回这些文件之前，你可以实现额外的限制，要么直接在函数体内使用 Python 逻辑，要么使用 decorator。例如，如果你只希望向登录的用户提供对上传的访问，那么你可以将 Flask-Login 的 @login_required 装饰器添加到这个路由中，或者添加用于正常路由的任何其他身份验证或角色检查机制。</p>
+<p>让我们使用这种实现思想在示例应用程序中显示上传的文件。下面是 app.py 的一个新的完整版本:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imghdr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, url_for, abort, \</span><br><span class="line">    send_from_directory</span><br><span class="line"><span class="keyword">from</span> werkzeug.utils <span class="keyword">import</span> secure_filename</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'MAX_CONTENT_LENGTH'</span>] = <span class="number">1024</span> * <span class="number">1024</span></span><br><span class="line">app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] = [<span class="string">'.jpg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>]</span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = <span class="string">'uploads'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_image</span><span class="params">(stream)</span>:</span></span><br><span class="line">    header = stream.read(<span class="number">512</span>)  <span class="comment"># 512 bytes should be enough for a header check</span></span><br><span class="line">    stream.seek(<span class="number">0</span>)  <span class="comment"># reset stream pointer</span></span><br><span class="line">    format = imghdr.what(<span class="keyword">None</span>, header)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> format:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'.'</span> + (format <span class="keyword">if</span> format != <span class="string">'jpeg'</span> <span class="keyword">else</span> <span class="string">'jpg'</span>)</span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    files = os.listdir(app.config[<span class="string">'UPLOAD_PATH'</span>])</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, files=files)</span><br><span class="line"><span class="meta">@app.route('/', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload_files</span><span class="params">()</span>:</span></span><br><span class="line">    uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">    filename = secure_filename(uploaded_file.filename)</span><br><span class="line">    <span class="keyword">if</span> filename != <span class="string">''</span>:</span><br><span class="line">        file_ext = os.path.splitext(filename)[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] <span class="keyword">or</span> \</span><br><span class="line">                file_ext != validate_image(uploaded_file.stream):</span><br><span class="line">            abort(<span class="number">400</span>)</span><br><span class="line">        uploaded_file.save(os.path.join(app.config[<span class="string">'UPLOAD_PATH'</span>], filename))</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br><span class="line"><span class="meta">@app.route('/uploads/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(app.config[<span class="string">'UPLOAD_PATH'</span>], filename)</span><br></pre></td></tr></table></figure></p>
+<p>除了新的 upload() 函数之外，index() 视图函数使用 os.listdir ()获取上传位置中的文件列表，并将其发送到模板以进行呈现。更新后的 <em>index.html </em>模板内容如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">    &#123;% for file in files %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for('upload', filename=file) &#125;&#125;"</span> <span class="attr">style</span>=<span class="string">"width: 64px"</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>有了这些改变，每次你上传一张图片，页面底部就会添加一个缩略图:<br><img src="https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/1602229806189-449b0d88-ebdd-42f2-9494-4f4c82c92332.png" alt=""></p>
+<h3 id="私有文件上传"><a href="#私有文件上传" class="headerlink" title="私有文件上传"></a>私有文件上传</h3><p>当用户将私有文件上传到应用程序时，需要进行额外的检查，以防止一个用户与未经授权的方共享文件。这些情况的解决方案需要上面所示的 upload() 视图函数的变体，以及额外的访问检查。</p>
+<p>一个常见的要求是只与所有者共享上传的文件。当存在此需求时，存储上传的一种方便方法是为每个用户使用一个单独的目录。例如，可以将给定用户的上传保存到 uploads/<user_id> 目录，然后可以修改 <code>uploads()</code>  函数，使其只服务于用户自己的上传目录，这样一来，一个用户就不可能从另一个用户那里查看文件。下面你可以看到这个技术的一个可能的实现，再次假设使用了 Flask-Login:</user_id></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/uploads/&lt;filename&gt;')</span></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(os.path.join(</span><br><span class="line">        app.config[<span class="string">'UPLOAD_PATH'</span>], current_user.get_id()), filename)</span><br></pre></td></tr></table></figure>
+<h2 id="显示上传进度"><a href="#显示上传进度" class="headerlink" title="显示上传进度"></a>显示上传进度</h2><p>到目前为止，我们一直依赖 web 浏览器提供的原生文件上传小部件来启动我们的文件上传。我相信我们都同意这个小工具不是很吸引人。不仅如此，由于缺少上传进度显示，它无法用于上传大文件，因为用户在整个上传过程中不能收到任何反馈。虽然本文的范围是涵盖服务器端，但我认为，如果能够给你提供一些关于如何实现一个基于 JavaScript 的现代文件上传小部件以显示上传进度的想法将很有用。</p>
+<p>好消息是，在服务器上不需要进行任何大的更改，无论你在浏览器中使用哪种方法来启动上传，上传机制都以相同的方式工作。 为了向你展示一个示例实现，我将用与流行的文件上传客户端 <a href="https://www.dropzonejs.com/" target="_blank" rel="noopener">dropzone.js</a> 兼容的index.html 替换HTML表单。</p>
+<p>下面是一个新版本的 templates/index.html，它从 CDN 加载下拉区 CSS 和 JavaScript 文件，并根据<a href="https://www.dropzonejs.com/#usage" target="_blank" rel="noopener">dropzone documentation</a> 实现一个上传表单:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>File Upload<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"&#123;&#123; url_for('upload_files') &#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"dropzone"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在实现 dropzone 时，我发现了一件有趣的事情，那就是它要求设置 <form> 元素中的 action 属性，即使标准 forms 接受一个空的动作来指示提交到相同的 URL。</form></p>
+<p>用这个新版的模板启动服务器，你会得到以下结果:<br><img src="https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/1602228140121-0b8d191c-52d6-46be-bde2-74ea2c80d655.png" alt=""><br>基本上就是这样！现在你可以拖拽文件，它们将上传到服务器，并带有一个进度条和成功或失败的最终指示。</p>
+<p>如果文件上传失败，无论是由于文件太大或无效，dropzone 想要显示一个错误消息。因为我们的服务器正在返回413和400错误的标准 Flask 错误页面，您将在错误弹出窗口中看到一些乱七八糟的 HTML。为了纠正这个错误，我们可以更新服务器以文本形式返回错误响应。</p>
+<p>当请求有效负载大于配置中设置的大小时，Flask 会生成文件过大条件的413错误。要覆盖默认的错误页面，我们必须使用 <code>app.errorhandler</code> 装饰器:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.errorhandler(413)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">too_large</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"File is too large"</span>, <span class="number">413</span></span><br></pre></td></tr></table></figure></p>
+<p>当任何验证检查失败时，应用程序将生成第二个错误条件。在这种情况下，错误是通过一个 <code>abort(400)</code> 调用生成的。取而代之的是，可以直接生成响应:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] <span class="keyword">or</span> \</span><br><span class="line">              file_ext != validate_image(uploaded_file.stream):</span><br><span class="line">          <span class="keyword">return</span> <span class="string">"Invalid image"</span>, <span class="number">400</span></span><br></pre></td></tr></table></figure></p>
+<p>我要做的最后一个改变并不是真的需要，但是它节省了一点带宽。对于成功上传，服务器返回一个 redirect() 到主路由。这将导致上传表单再次显示，并刷新页面底部的上载缩略图列表。现在这些都不需要了，因为上传是作为后台请求通过 dropzone 完成的，所以我们可以消除重定向，并使用代码204切换到空响应。</p>
+<p>下面是 app.py 的完整更新版本，可以与 dropzone.js 一起使用:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imghdr</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, url_for, abort, \</span><br><span class="line">    send_from_directory</span><br><span class="line"><span class="keyword">from</span> werkzeug.utils <span class="keyword">import</span> secure_filename</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[<span class="string">'MAX_CONTENT_LENGTH'</span>] = <span class="number">2</span> * <span class="number">1024</span> * <span class="number">1024</span></span><br><span class="line">app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] = [<span class="string">'.jpg'</span>, <span class="string">'.png'</span>, <span class="string">'.gif'</span>]</span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = <span class="string">'uploads'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validate_image</span><span class="params">(stream)</span>:</span></span><br><span class="line">    header = stream.read(<span class="number">512</span>)</span><br><span class="line">    stream.seek(<span class="number">0</span>)</span><br><span class="line">    format = imghdr.what(<span class="keyword">None</span>, header)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> format:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'.'</span> + (format <span class="keyword">if</span> format != <span class="string">'jpeg'</span> <span class="keyword">else</span> <span class="string">'jpg'</span>)</span><br><span class="line"><span class="meta">@app.errorhandler(413)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">too_large</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"File is too large"</span>, <span class="number">413</span></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    files = os.listdir(app.config[<span class="string">'UPLOAD_PATH'</span>])</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, files=files)</span><br><span class="line"><span class="meta">@app.route('/', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload_files</span><span class="params">()</span>:</span></span><br><span class="line">    uploaded_file = request.files[<span class="string">'file'</span>]</span><br><span class="line">    filename = secure_filename(uploaded_file.filename)</span><br><span class="line">    <span class="keyword">if</span> filename != <span class="string">''</span>:</span><br><span class="line">        file_ext = os.path.splitext(filename)[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> file_ext <span class="keyword">not</span> <span class="keyword">in</span> app.config[<span class="string">'UPLOAD_EXTENSIONS'</span>] <span class="keyword">or</span> \</span><br><span class="line">                file_ext != validate_image(uploaded_file.stream):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"Invalid image"</span>, <span class="number">400</span></span><br><span class="line">        uploaded_file.save(os.path.join(app.config[<span class="string">'UPLOAD_PATH'</span>], filename))</span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>, <span class="number">204</span></span><br><span class="line"><span class="meta">@app.route('/uploads/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(app.config[<span class="string">'UPLOAD_PATH'</span>], filename)</span><br></pre></td></tr></table></figure></p>
+<p>用这个更新重新启动应用程序，现在错误将会有一个正确的消息:<br><img src="https://raw.githubusercontent.com/geekspeng/geekspeng.github.io/develop/source/images/1602228541419-b3db7180-8878-49ad-8e2b-791634cd69a8.png" alt=""><br>dropzone.js 库非常灵活，有许多定制选项，因此我鼓励你访问他们的文档，了解如何使其适应你的需求。你也可以寻找其他的 JavaScript 文件上传库，因为它们都遵循 HTTP 标准，这意味着你的 Flask 服务器可以很好地与它们一起工作。</p>
+<p>翻译<br><a href="https://blog.miguelgrinberg.com/post/handling-file-uploads-with-flask" target="_blank" rel="noopener">Handling File Uploads With Flask</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_geekspeng.jpg" alt="geekspeng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的二维码，订阅我的微信公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    geekspeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://geekspeng.cn/2020/04/12/使用 Flask 处理文件上传.html" title="使用 Flask 处理文件上传">http://geekspeng.cn/2020/04/12/使用 Flask 处理文件上传.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Flask/" rel="tag"><i class="fa fa-tag"></i> Flask</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/08/使用 Systemd将Flask应用程序作为服务运行.html" rel="next" title="使用 Systemd将Flask应用程序作为服务运行">
+                <i class="fa fa-chevron-left"></i> 使用 Systemd将Flask应用程序作为服务运行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/23/在 HTTPS 上运行 FLASK 应用程序.html" rel="prev" title="在 HTTPS 上运行 FLASK 应用程序">
+                在 HTTPS 上运行 FLASK 应用程序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/geekspeng.png"
+                alt="geekspeng" />
+            
+              <p class="site-author-name" itemprop="name">geekspeng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/geekspeng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:geekspeng@icloud.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huxiu.com/" title="虎嗅网" target="_blank">虎嗅网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.infoq.com/cn/" title="InfoQ" target="_blank">InfoQ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.jobbole.com/" title="伯乐在线" target="_blank">伯乐在线</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-Flask-处理文件上传"><span class="nav-number">1.</span> <span class="nav-text">使用 Flask 处理文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本文件上传表单"><span class="nav-number">1.1.</span> <span class="nav-text">基本文件上传表单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Flask-接受文件提交"><span class="nav-number">1.2.</span> <span class="nav-text">使用 Flask 接受文件提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保护文件上传"><span class="nav-number">1.3.</span> <span class="nav-text">保护文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#限制上传文件的大小"><span class="nav-number">1.3.1.</span> <span class="nav-text">限制上传文件的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证文件名"><span class="nav-number">1.3.2.</span> <span class="nav-text">验证文件名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证文件内容"><span class="nav-number">1.3.3.</span> <span class="nav-text">验证文件内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用上传的文件"><span class="nav-number">1.4.</span> <span class="nav-text">使用上传的文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#公共文件上传"><span class="nav-number">1.4.1.</span> <span class="nav-text">公共文件上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有文件上传"><span class="nav-number">1.4.2.</span> <span class="nav-text">私有文件上传</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示上传进度"><span class="nav-number">1.5.</span> <span class="nav-text">显示上传进度</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">geekspeng</span>
+  <a href="http://www.miitbeian.gov.cn/">蜀ICP备15010699号-1</a>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">204k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点总阅读时间">3:24</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz',
+        appKey: 'bxqh0jEe46EikJAKPxYAMiyS',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz", "bxqh0jEe46EikJAKPxYAMiyS");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "middleRight";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

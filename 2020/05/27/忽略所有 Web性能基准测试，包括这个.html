@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "3ffdaa6e"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft YaHei:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT, geekspeng, Python, ML" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="geekspeng">
+<meta property="og:url" content="http://geekspeng.cn/404.html">
+<meta property="og:site_name" content="geekspeng">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T01:49:31.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="geekspeng">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.1',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://geekspeng.cn/404.html"/>
+
+
+
+
+
+  <title>忽略所有 Web性能基准测试 | geekspeng</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?fd7738e99e6dceeb10fc01b9b5dba182";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">geekspeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">人生苦短，我用python</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geekspeng.cn/2020/05/27/忽略所有 Web性能基准测试，包括这个.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="geekspeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/geekspeng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="geekspeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">忽略所有 Web性能基准测试</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+00:00">2020-05-27</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-27T00:00:00+00:00">2020-05-27</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Flask/" itemprop="url" rel="index"><span itemprop="name">Flask</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/27/忽略所有 Web性能基准测试，包括这个.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/忽略所有 Web性能基准测试，包括这个.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/27/忽略所有 Web性能基准测试，包括这个.html" class="leancloud_visitors" data-flag-title="忽略所有 Web性能基准测试">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:09</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="忽略所有-Web性能基准测试，包括这个"><a href="#忽略所有-Web性能基准测试，包括这个" class="headerlink" title="忽略所有 Web性能基准测试，包括这个"></a>忽略所有 Web性能基准测试，包括这个</h1><p>几个月前，有一篇名为 <a href="http://calpaterson.com/async-python-is-not-faster.html" target="_blank" rel="noopener">Async Python is Not Faster</a> 的文章在社交媒体上广为流传。在这篇文章中，作者 Cal Paterson 指出，与普遍的看法相反，异步 web 框架不仅“不比传统的同步框架快” ，而且还更慢。他通过展示他实施的相当完整的基准测试的结果来支持这一点。</p>
+<p>我希望一切都像作者在他的博客文章中所说的那样简单，但是事实是，衡量Web应用程序的性能异常复杂，并且他在实施基准和对结果的解释上都犯了一些错误。</p>
+<p>在本文中，你可以看到我在理解和修复此基准，重新运行该基准以及最终得出令人震惊的发现所做的努力。</p>
+<a id="more"></a>
+<h2 id="基准测试结果"><a href="#基准测试结果" class="headerlink" title="基准测试结果"></a>基准测试结果</h2><p>在深入研究详细细节之前，我假设你急于查看基准测试的结果。 这些是我解决了其中发现的所有问题后，在运行此基准测试时所获得的结果。 我还添加了一些我特别感兴趣的框架：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Framework</th>
+<th style="text-align:left">Web Server</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Wrk</th>
+<th style="text-align:left">Tput</th>
+<th style="text-align:left">P50</th>
+<th style="text-align:left">P99</th>
+<th style="text-align:left">#DB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.38</td>
+<td style="text-align:left">85</td>
+<td style="text-align:left">1136</td>
+<td style="text-align:left">100</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.38</td>
+<td style="text-align:left">84</td>
+<td style="text-align:left">1134</td>
+<td style="text-align:left">99</td>
+</tr>
+<tr>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.24</td>
+<td style="text-align:left">95</td>
+<td style="text-align:left">1155</td>
+<td style="text-align:left">83</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.23</td>
+<td style="text-align:left">88</td>
+<td style="text-align:left">1124</td>
+<td style="text-align:left">97</td>
+</tr>
+<tr>
+<td style="text-align:left">Starlette</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.23</td>
+<td style="text-align:left">102</td>
+<td style="text-align:left">1146</td>
+<td style="text-align:left">82</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.21</td>
+<td style="text-align:left">89</td>
+<td style="text-align:left">1162</td>
+<td style="text-align:left">95</td>
+</tr>
+<tr>
+<td style="text-align:left">Aiohttp</td>
+<td style="text-align:left">Aiohttp</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.20</td>
+<td style="text-align:left">95</td>
+<td style="text-align:left">1153</td>
+<td style="text-align:left">80</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.16</td>
+<td style="text-align:left">103</td>
+<td style="text-align:left">1165</td>
+<td style="text-align:left">97</td>
+</tr>
+<tr>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.14</td>
+<td style="text-align:left">95</td>
+<td style="text-align:left">1179</td>
+<td style="text-align:left">83</td>
+</tr>
+<tr>
+<td style="text-align:left">Tornado</td>
+<td style="text-align:left">Tornado</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.12</td>
+<td style="text-align:left">91</td>
+<td style="text-align:left">1170</td>
+<td style="text-align:left">82</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.12</td>
+<td style="text-align:left">82</td>
+<td style="text-align:left">1144</td>
+<td style="text-align:left">96</td>
+</tr>
+<tr>
+<td style="text-align:left">FastAPI</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.08</td>
+<td style="text-align:left">88</td>
+<td style="text-align:left">1197</td>
+<td style="text-align:left">77</td>
+</tr>
+<tr>
+<td style="text-align:left">Aioflask</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.08</td>
+<td style="text-align:left">116</td>
+<td style="text-align:left">1167</td>
+<td style="text-align:left">83</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">1.07</td>
+<td style="text-align:left">152</td>
+<td style="text-align:left">183</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Quart</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">1.05</td>
+<td style="text-align:left">116</td>
+<td style="text-align:left">1167</td>
+<td style="text-align:left">74</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">1.05</td>
+<td style="text-align:left">154</td>
+<td style="text-align:left">193</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">1.02</td>
+<td style="text-align:left">159</td>
+<td style="text-align:left">187</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">1.00</td>
+<td style="text-align:left">163</td>
+<td style="text-align:left">192</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">0.94</td>
+<td style="text-align:left">157</td>
+<td style="text-align:left">1166</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">0.91</td>
+<td style="text-align:left">159</td>
+<td style="text-align:left">1183</td>
+<td style="text-align:left">19</td>
+</tr>
+<tr>
+<td style="text-align:left">Quart</td>
+<td style="text-align:left">Hypercorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">0.90</td>
+<td style="text-align:left">150</td>
+<td style="text-align:left">1216</td>
+<td style="text-align:left">64</td>
+</tr>
+</tbody>
+</table>
+<p>关于这些结果的说明:</p>
+<ul>
+<li>此基准测试显示了在100个客户端的恒定负载下的性能</li>
+<li>有三种类型的测试: <strong>Sync</strong>、 <strong>Async/Coroutine</strong> 和 <strong>Async/Greenlet</strong>。如果您需要了解这些类型之间的区别，请查看我的  <a href="https://blog.miguelgrinberg.com/drafts/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY3fQ.3nDqIIIe7e3YS8C44T_tJPxAZZGQwEhH-w2GUBvCxQA" target="_blank" rel="noopener">Sync vs. Async Python</a>  这篇文章</li>
+<li>我使用了两种不同的 worker 配置。对于异步测试，我使用了6个 workers (每个 CPU 一个)。对于同步测试，我使用了19个 workers 。我通过测试不同的配置来最大化性能，从而得出这些数字</li>
+<li>所有 asyncio 测试都使用 <a href="https://github.com/MagicStack/uvloop" target="_blank" rel="noopener">uvloop</a> 以获得最佳性能</li>
+<li>我使用 Flask + Gunicorn 测试作为基准，而不是将吞吐量报告为每秒处理的请求数，并将每个测试的吞吐量报告为该基准的倍数。 例如，吞吐量为 2.0 意味着“快于 Flask + Gunicorn 的两倍”，吞吐量为 0.5 意味着“快于Flask + Gunicorn的一半（或慢了两倍）”</li>
+<li>P50 是 50％（中位数）的请求的处理时间小于这个时间，以毫秒为单位。 换句话说，测试期间发送的请求中有 50％的请求在改时间内完成</li>
+<li>P99 是 99％的请求的处理时间小于这个时间，以毫秒为单位。 你可以将这个数字看作是移除异常值后处理请求所需的最长时间</li>
+<li>#DB 列显示每个测试使用的最大数据库会话数。每个配置有100个可用会话。 同步测试显然被限制为每个 worker 一个会话<h2 id="基准测试是做什么的？"><a href="#基准测试是做什么的？" class="headerlink" title="基准测试是做什么的？"></a>基准测试是做什么的？</h2></li>
+</ul>
+<p>基准测试包括在负载下运行 Web 应用程序并评估性能。 对 Web服务器和 Web 框架的许多不同配置进行重复测试，以确定所有这些工具在相同条件下的性能。</p>
+<p>下面你可以看到一个测试的示意图。在这个图中，灰色框是常量，而红色框代表系统中插入了要评估的不同实现的部分。<br><img src="https://cdn.nlark.com/yuque/0/2020/png/1225286/1602295874095-2736ae46-ea94-4744-8f0c-e0713c55bdbf.png#align=left&amp;display=inline&amp;height=495&amp;margin=%5Bobject%20Object%5D&amp;originHeight=495&amp;originWidth=469&amp;size=0&amp;status=done&amp;style=none&amp;width=469" alt=""></p>
+<ul>
+<li><strong>负载生成器 </strong>是生成客户端连接的进程。这是通过 <a href="https://httpd.apache.org/docs/2.4/programs/ab.html" target="_blank" rel="noopener">Apache Bench (ab)</a> 完成的。</li>
+<li><strong>反向代理 </strong>是唯一的公共接口，它接收请求。 Nginx 服务器提供了此功能。</li>
+<li><strong>Web服务器 </strong>和 <strong>负载平衡器</strong>接受来自反向代理的请求，并将其分派给几个 Web应用程序的 worker 之一。</li>
+<li><strong>应用程序 </strong>组件是处理请求的地方。</li>
+<li><strong>数据库池 </strong>是一个管理数据库连接池的服务。 在此测试中，此任务由 <a href="https://www.pgbouncer.org/" target="_blank" rel="noopener">pgbouncer</a> 完成。</li>
+<li><strong>数据库</strong> 是实际的存储服务，它是一个PostgresSQL实例。</li>
+</ul>
+<p>最初的基准测试有各种各样的Web服务器。 我添加了一些对我来说很有趣的东西。 我测试的Web服务器的完整列表如下所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Server</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://gunicorn.org/" target="_blank" rel="noopener">Gunicorn</a></td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://uwsgi-docs.readthedocs.io/en/latest/" target="_blank" rel="noopener">uWSGI</a></td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">C</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.gevent.org/" target="_blank" rel="noopener">Gevent</a></td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://meinheld.org/" target="_blank" rel="noopener">Meinheld</a></td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">C</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.tornadoweb.org/en/stable/" target="_blank" rel="noopener">Tornado</a></td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.uvicorn.org/" target="_blank" rel="noopener">Uvicorn</a></td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.aiohttp.org/en/stable/" target="_blank" rel="noopener">Aiohttp</a></td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://sanic.readthedocs.io/en/latest/" target="_blank" rel="noopener">Sanic</a></td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">Python</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://pgjones.gitlab.io/hypercorn/" target="_blank" rel="noopener">Hypercorn</a></td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">Python</td>
+</tr>
+</tbody>
+</table>
+<p>对于应用程序组件，使用小型微服务，该微服务执行数据库查询并以JSON响应的形式返回结果。 为了让你更好地了解测试涉及的内容，下面可以看到此服务的 Flask 和 Aiohttp实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flask</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> sync_db <span class="keyword">import</span> get_row</span><br><span class="line">app = flask.Flask(<span class="string">"python-web-perf"</span>)</span><br><span class="line"><span class="meta">@app.route("/test")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    a, b = get_row()</span><br><span class="line">    <span class="keyword">return</span> json.dumps(&#123;<span class="string">"a"</span>: str(a).zfill(<span class="number">10</span>), <span class="string">"b"</span>: b&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> aiohttp <span class="keyword">import</span> web</span><br><span class="line"><span class="keyword">from</span> async_db <span class="keyword">import</span> get_row</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(request)</span>:</span></span><br><span class="line">    a, b = <span class="keyword">await</span> get_row()</span><br><span class="line">    <span class="keyword">return</span> web.Response(text=json.dumps(&#123;<span class="string">"a"</span>: str(a).zfill(<span class="number">10</span>), <span class="string">"b"</span>: b&#125;))</span><br><span class="line">app = web.Application()</span><br><span class="line">app.add_routes([web.get(<span class="string">'/test'</span>, handle)])</span><br></pre></td></tr></table></figure>
+<p>该函数在装载有随机数据的数据库上运行查询。 此功能有两种实现，一种使用标准 Python 的 <a href="https://www.psycopg.org/docs/" target="_blank" rel="noopener">psycopg2</a> 软件包，另一种使用 <a href="https://aiopg.readthedocs.io/en/stable/" target="_blank" rel="noopener">aiopg</a> 进行 <code>asyncio</code> 测试。 对于 greenlet 测试，请对 psycopg2 进行适当的修补以确保其不会阻塞异步循环（这是原始基准测试中的重要疏忽）。</p>
+<p>我测试的该应用程序的实现基于以下Web框架：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Framework</th>
+<th style="text-align:left">Platform</th>
+<th style="text-align:left">Gateway interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://flask.palletsprojects.com/en/1.1.x/" target="_blank" rel="noopener">Flask</a></td>
+<td style="text-align:left">Standard Python</td>
+<td style="text-align:left">WSGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://bottlepy.org/docs/dev/" target="_blank" rel="noopener">Bottle</a></td>
+<td style="text-align:left">Standard Pyhon</td>
+<td style="text-align:left">WSGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://falcon.readthedocs.io/en/stable/" target="_blank" rel="noopener">Falcon</a></td>
+<td style="text-align:left">Standard Pyhon</td>
+<td style="text-align:left">WSGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://docs.aiohttp.org/en/stable/" target="_blank" rel="noopener">Aiohttp</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">Custom</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://sanic.readthedocs.io/en/latest/" target="_blank" rel="noopener">Sanic</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">Custom or ASGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://pgjones.gitlab.io/quart/" target="_blank" rel="noopener">Quart</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">ASGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.starlette.io/" target="_blank" rel="noopener">Starlette</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">ASGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.tornadoweb.org/en/stable/" target="_blank" rel="noopener">Tornado</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">Custom</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener">FastAPI</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">ASGI</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://github.com/miguelgrinberg/aioflask" target="_blank" rel="noopener">Aioflask</a></td>
+<td style="text-align:left">asyncio</td>
+<td style="text-align:left">ASGI</td>
+</tr>
+</tbody>
+</table>
+<p>我没有测试过 Web服务器和应用程序的所有可能配对，主要是因为某些组合不能一起工作，而且还因为我不想浪费测试时间在那些奇怪的，不常见或不感兴趣的组合上。</p>
+<p>如果您熟悉原始基准测试，以下是我自己设置中的差异列表：</p>
+<ul>
+<li>我已经在真实的硬件上执行了所有测试。 原始的基准测试使用的是云服务器，这不是一个好主意，因为虚拟化服务器中的CPU性能一直在变化，并且依赖于位于同一物理主机上的其他服务器的使用情况。</li>
+<li>我使用 Docker 容器来托管测试中的所有组件。这只是为了方便起见，我不知道在原始的基准测试中是如何设置的</li>
+<li>我已经在应用程序层删除了会话池，因为 <code>pgbouncer</code> 已经提供了会话池。 这解决了一个间接问题，即用于同步和异步测试的应用程序池配置不同。 在我的测试中，有100个会话可以分配给所有的应用程序 worker</li>
+<li>原始基准测试中发出的数据库查询是通过主键进行的简单搜索。 为了使测试更加真实，我通过向其添加短暂延迟来使查询稍微慢一些。 我知道这是一个非常主观的领域，许多人会反对这种更改，但是我观察到，这样快速的查询没有多少机会可以实现并发</li>
+<li>上面我提到过，我将 <code>psycopg2</code> 修补为与greenlet框架一起使用时可以异步工作。 原始基准测试中忽略了这一点。</li>
+<li>原始基准测试中的 <code>aiohttp</code> 测试使用 <code>asyncio</code> 中的标准循环，而不是 <code>uvloop</code> 中的标准循环。<h2 id="这些结果意味着什么？"><a href="#这些结果意味着什么？" class="headerlink" title="这些结果意味着什么？"></a>这些结果意味着什么？</h2></li>
+</ul>
+<p>从我获得的结果中可以得出一些结论，但是我鼓励你对数据进行自己的分析，并对一切提出质疑。与大多数基准测试作者不同，我没有待办事项，我只对事实感兴趣。如果发现任何错误，请与我们联系。</p>
+<p>我敢打赌，你们中的大多数人都会感到惊讶，即使是性能最好的测试，也不会比标准的 Flask/Gunicorn 部署提高40% 的性能。不同的服务器和框架之间当然存在性能差异，但是它们并没有那么大，对吧？下次查看 asyncio 框架作者发布的太好了以至于不真实的基准时，请记住这一点！</p>
+<p>异步解决方案（Hypercorn服务器除外，它看起来非常慢）在此测试中的性能明显优于同步解决方案。你可以看到，总体而言，同步测试在吞吐量方面都位于列表的底部，并且都非常接近 Flask/Gunicorn 基线。请注意，于某种奇怪的原因，原始基准测试的作者将 greenlet 测试称为同步，与实现并发的方法相比，更加重视应用程序的编码风格。</p>
+<p>如果您查看 <a href="http://calpaterson.com/async-python-is-not-faster.html" target="_blank" rel="noopener">original benchmark results</a> 并将它们与我的结果进行比较，你可能会认为这些不是来自同一基准测试。 虽然结果并非完全相反，但在原始结果中，同步测试的效果要比我的好得多。 <strong>我认为原因是原始基准中发出的数据库查询非常简单，以至于并行运行多个查询几乎没有收益</strong>。 这使异步测试处于不利地位，因为当任务受 I/O 限制并且可以重叠时，异步测试的性能最好。 如上所述，我的基准测试版本使用了较慢的查询，以使其成为更真实的场景。</p>
+<p>这两个基准测试的一个共同点是，Meinheld 测试在两个方面都表现得很好。你能猜到为什么吗？Meinheld 是用 C 编写的，而其他的异步服务器都是用 Python 编写的。这很重要。</p>
+<p>Gevent 测试在我的基准测试中表现相当不错，在原始的基准测试中表现得很糟糕。这是因为作者忘记 <a href="https://github.com/psycopg/psycogreen/" target="_blank" rel="noopener">patch the psycopg2 package</a>，以使其在 greenlets 下变为非阻塞。</p>
+<p>相反，uWSGI 测试在原始基准测试中表现良好，在我的测试中仅为平均水平。 这很奇怪，因为 uWSGI 也是 C 服务器，所以它应该做得更好。 我相信使用更长的数据库查询对此有直接影响。 当应用程序执行更多工作时，Web服务器使用的时间对整体的影响较小。 对于异步测试，像 Meinheld 这样的 C 服务器非常重要，因为它使用自己的循环并执行所有上下文切换工作。 在由操作系统进行上下文切换的同步服务器中，可以使用 C 进行优化的工作较少。</p>
+<p>在我的结果中，P50 和 P99的数字要高得多，部分原因是我的测试系统可能比较慢，还因为我发出的数据库查询需要更长的时间才能完成，这意味着处理请求的时间更长。原始基准测试只是通过其主键查询了行，这种方法非常快，根本不能代表实际的数据库使用情况。对于较长的查询，在大多数测试中，P99 的数值在1100毫秒内是相当一致的，只有少数几个测试做得更好。对于比 P99 数值慢的原因，有时会在外部条件（可能在数据库服务器或连接池中），这些条件时常“打嗝” ，导致大多数测试有一些缓慢的请求。如果幸运的话，一个测试能够避免这些问题，那么它的 P99数字看起来会好很多。</p>
+<p>通过查看自己的基准，我得出了一些其他结论:</p>
+<ul>
+<li>从三个同步框架来看，Falcon 和 Bottle 看起来比 Flask 稍微快一点，但在我看来，这确实不足以保证切换框架</li>
+<li>Greenlets 太棒了！它们不仅拥有性能最好的异步 web 服务器，而且还允许你使用熟悉的框架在标准Python中编写代码，比如 Flask，Django，Bottle 等等</li>
+<li>我很高兴发现我的 <a href="https://github.com/miguelgrinberg/aioflask" target="_blank" rel="noopener">Aioflask experiment</a> 比标准的Flask表现更好，并且甚至比 Quart 还好。 我想我必须完成它。<h2 id="基准是不可靠的"><a href="#基准是不可靠的" class="headerlink" title="基准是不可靠的"></a>基准是不可靠的</h2></li>
+</ul>
+<p>我觉得奇怪的是，由于一些错误和解释错误，这个基准让原作者相信同步 Python 比异步更快。我想知道他在创建基准之前是否已经有了这种信念，以及是否正是这种信念导致他犯了这些无意识的错误，从而使基准结果朝着他想要的方向发展。</p>
+<p>如果我们承认这是可能的，难道我们不应该担心这也发生在我身上吗？我修改这个基准不是为了正确性和准确性，而是为了让它更符合我的观点，而不是他的观点吗？我所做的一些修复确实是错误的。例如，在使用 greenlet 服务器时不打补丁不能作为一种选择来捍卫，这是即使基准测试作者也<a href="https://github.com/calpaterson/python-web-perf/issues/11" target="_blank" rel="noopener">无法证明</a>的明确漏洞。但是我在灰色地带所做的其他更改，比如数据库查询应该持续多长时间，又该如何处理呢？</p>
+<p>作为一个有趣的练习，我决定看看是否可以重新配置这个基准以显示完全不同的结果，同时显然保持其正确性。下表总结了我必须使用的选项，你可以看到基准测试的原始版本和我自己的版本中使用的配置，以及我想向异步或同步倾斜所做的更改</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Option</th>
+<th style="text-align:left">Original</th>
+<th style="text-align:left">My Benchmark</th>
+<th style="text-align:left">Better Async</th>
+<th style="text-align:left">Better Sync</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Workers</td>
+<td style="text-align:left">Variable</td>
+<td style="text-align:left">Sync: 19</td>
+</tr>
+</tbody>
+</table>
+<p>Async: 6 | Sync: 19<br>Async: 6 | Sync: 19<br>Async: 6 |<br>| Max database sessions | 4 per worker | 100 total | 100 total | 19 total |<br>| Database query delay | None | 20ms | 40ms | 10ms |<br>| Client connections | 100 | 100 | 400 | 19 |</p>
+<p>让我来解释一下这四个配置变量的变化是如何影响测试的:</p>
+<ul>
+<li>我决定保持 workers 的数量不变，因为通过实验，我已经确定这些数字对于我的测试系统的性能是最好的。对我来说，如果我把这些数字改成不那么理想的值，我会觉得不诚实</li>
+<li>同步测试每个 worker 使用一个数据库会话，因此任何等于或高于 worker 的会话数量都会导致类似的性能。对于异步测试，更多的会话允许更多的请求并行发出它们的查询，因此减少这个数量肯定会影响它们的性能</li>
+<li>请求执行的 I/O 数量决定了基准测试的 I/O 和 CPU 绑定特征之间的平衡。当有更多的 I/O 时，异步服务器由于其高并发性仍然可以有很好的 CPU 利用率。对于同步服务器，另一方面，慢速 I/O 意味着请求必须在队列中等待更长时间，直到 worker 释放</li>
+<li>异步测试可以自由地扩展到大量并发任务，而同步测试有一个固定的并发性，这个并发性是由 worker 的数量决定的。客客户端连接数量增加，对同步服务器的影响远大于对异步服务器的损害，因此这是一种偏爱彼此的简单方法</li>
+</ul>
+<p>你准备好大吃一惊了吗？下面你可以看到一个表，它比较了我在本文开头分享的吞吐量结果和我为刚才讨论的两个场景重新配置基准所获得的数字。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Framework</th>
+<th style="text-align:left">Web Server</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">My Results</th>
+<th style="text-align:left">Better Async</th>
+<th style="text-align:left">Better Sync</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.38</td>
+<td style="text-align:left">5.56</td>
+<td style="text-align:left">1.13</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.38</td>
+<td style="text-align:left">5.17</td>
+<td style="text-align:left">1.12</td>
+</tr>
+<tr>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.24</td>
+<td style="text-align:left">4.58</td>
+<td style="text-align:left">1.09</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Meinheld</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.23</td>
+<td style="text-align:left">5.27</td>
+<td style="text-align:left">1.06</td>
+</tr>
+<tr>
+<td style="text-align:left">Starlette</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.23</td>
+<td style="text-align:left">4.36</td>
+<td style="text-align:left">1.13</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.21</td>
+<td style="text-align:left">4.59</td>
+<td style="text-align:left">1.18</td>
+</tr>
+<tr>
+<td style="text-align:left">Aiohttp</td>
+<td style="text-align:left">Aiohttp</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.20</td>
+<td style="text-align:left">4.79</td>
+<td style="text-align:left">1.27</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.16</td>
+<td style="text-align:left">4.54</td>
+<td style="text-align:left">1.01</td>
+</tr>
+<tr>
+<td style="text-align:left">Sanic</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.14</td>
+<td style="text-align:left">4.40</td>
+<td style="text-align:left">1.03</td>
+</tr>
+<tr>
+<td style="text-align:left">Tornado</td>
+<td style="text-align:left">Tornado</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.12</td>
+<td style="text-align:left">4.19</td>
+<td style="text-align:left">1.03</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Gevent</td>
+<td style="text-align:left">Async / Greenlet</td>
+<td style="text-align:left">1.12</td>
+<td style="text-align:left">4.66</td>
+<td style="text-align:left">0.99</td>
+</tr>
+<tr>
+<td style="text-align:left">FastAPI</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.08</td>
+<td style="text-align:left">4.33</td>
+<td style="text-align:left">1.02</td>
+</tr>
+<tr>
+<td style="text-align:left">Aioflask</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.08</td>
+<td style="text-align:left">3.57</td>
+<td style="text-align:left">1.07</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">1.07</td>
+<td style="text-align:left">1.00</td>
+<td style="text-align:left">1.43</td>
+</tr>
+<tr>
+<td style="text-align:left">Quart</td>
+<td style="text-align:left">Uvicorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">1.05</td>
+<td style="text-align:left">3.99</td>
+<td style="text-align:left">0.99</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">1.05</td>
+<td style="text-align:left">0.90</td>
+<td style="text-align:left">1.35</td>
+</tr>
+<tr>
+<td style="text-align:left">Bottle</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">1.02</td>
+<td style="text-align:left">0.97</td>
+<td style="text-align:left">1.11</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">1.00</td>
+<td style="text-align:left">1.00</td>
+<td style="text-align:left">1.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Flask</td>
+<td style="text-align:left">uWSGI</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">0.94</td>
+<td style="text-align:left">0.90</td>
+<td style="text-align:left">1.26</td>
+</tr>
+<tr>
+<td style="text-align:left">Falcon</td>
+<td style="text-align:left">Gunicorn</td>
+<td style="text-align:left">Sync</td>
+<td style="text-align:left">0.91</td>
+<td style="text-align:left">1.00</td>
+<td style="text-align:left">1.11</td>
+</tr>
+<tr>
+<td style="text-align:left">Quart</td>
+<td style="text-align:left">Hypercorn</td>
+<td style="text-align:left">Async / Coroutine</td>
+<td style="text-align:left">0.90</td>
+<td style="text-align:left">3.24</td>
+<td style="text-align:left">0.80</td>
+</tr>
+</tbody>
+</table>
+<p>这不是令人讨厌吗？ 请记住，基准始终是相同的，我所做的只是更改配置参数。</p>
+<p>“ Better Async”基准测试显示，所有的同步测试都接近 Flask/Gunicorn 测试的1.0基准，而异步测试的速度要快3到6倍。即使是在我的基准测试中非常慢的 Hypercorn 测试，也得了一个相当不错的分数。“ Better Sync”基准测试显示 uWSGI 测试的性能比其他测试做得更好，尽管大多数异步测试结果都高于1.0，但查看这些结果并不会激发任何人进入异步测试。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我希望本文能够帮助你认识到基准游戏已经被操纵了。我可以很容易地做出合理的论证，支持这些结果集中的任何一组，这正是每个发布基准的人所做的。我并不是说基准作者不诚实，实际上我相信大多数人都不是。只是在构建基准和分析其结果时，很难把个人观点放在一边，保持客观。</p>
+<p>正如我在标题中所说的，我认为我能给你的最好的建议就是理解异步和同步解决方案的优势，并并据此而不是基准测试所说的来做出决定。一旦你知道哪种模式最适合你，请记住，不同框架 或 Web服务器之间的性能差异不会非常显着，因此请选择可以提高工作效率的工具！</p>
+<p>如果你有兴趣使用我的版本的基准测试，可以在这个 <a href="https://github.com/miguelgrinberg/python-web-perf" target="_blank" rel="noopener">GitHub 仓库</a>. 找到它。</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_geekspeng.jpg" alt="geekspeng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的二维码，订阅我的微信公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    geekspeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://geekspeng.cn/2020/05/27/忽略所有 Web性能基准测试，包括这个.html" title="忽略所有 Web性能基准测试">http://geekspeng.cn/2020/05/27/忽略所有 Web性能基准测试，包括这个.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/Flask/" rel="tag"><i class="fa fa-tag"></i> Flask</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/23/Sync 与 Async Python：有什么区别？.html" rel="next" title="Sync 与 Async Python：有什么区别？">
+                <i class="fa fa-chevron-left"></i> Sync 与 Async Python：有什么区别？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/geekspeng.png"
+                alt="geekspeng" />
+            
+              <p class="site-author-name" itemprop="name">geekspeng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/geekspeng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:geekspeng@icloud.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huxiu.com/" title="虎嗅网" target="_blank">虎嗅网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.infoq.com/cn/" title="InfoQ" target="_blank">InfoQ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.jobbole.com/" title="伯乐在线" target="_blank">伯乐在线</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#忽略所有-Web性能基准测试，包括这个"><span class="nav-number">1.</span> <span class="nav-text">忽略所有 Web性能基准测试，包括这个</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基准测试结果"><span class="nav-number">1.1.</span> <span class="nav-text">基准测试结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基准测试是做什么的？"><span class="nav-number">1.2.</span> <span class="nav-text">基准测试是做什么的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这些结果意味着什么？"><span class="nav-number">1.3.</span> <span class="nav-text">这些结果意味着什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基准是不可靠的"><span class="nav-number">1.4.</span> <span class="nav-text">基准是不可靠的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">geekspeng</span>
+  <a href="http://www.miitbeian.gov.cn/">蜀ICP备15010699号-1</a>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">204k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点总阅读时间">3:24</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz',
+        appKey: 'bxqh0jEe46EikJAKPxYAMiyS',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz", "bxqh0jEe46EikJAKPxYAMiyS");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "middleRight";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

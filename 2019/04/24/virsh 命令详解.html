@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "3ffdaa6e"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft YaHei:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.1" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT, geekspeng, Python, ML" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="geekspeng">
+<meta property="og:url" content="http://geekspeng.cn/404.html">
+<meta property="og:site_name" content="geekspeng">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-08T01:49:31.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="geekspeng">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.0.1',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://geekspeng.cn/404.html"/>
+
+
+
+
+
+  <title>virsh 命令详解 | geekspeng</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?fd7738e99e6dceeb10fc01b9b5dba182";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">geekspeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">人生苦短，我用python</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geekspeng.cn/2019/04/24/virsh 命令详解.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="geekspeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/geekspeng.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="geekspeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">virsh 命令详解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T00:00:00+00:00">2019-04-24</time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-24T00:00:00+00:00">2019-04-24</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/虚拟化/" itemprop="url" rel="index"><span itemprop="name">虚拟化</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/24/virsh 命令详解.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/24/virsh 命令详解.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/24/virsh 命令详解.html" class="leancloud_visitors" data-flag-title="virsh 命令详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">30k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">0:30</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install qemu-kvm libvirt virt-install virt-manager</span></span><br></pre></td></tr></table></figure>
+<h1 id="命令列表"><a href="#命令列表" class="headerlink" title="命令列表"></a>命令列表</h1><h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><ul>
+<li>virsh-v  只显示版本号</li>
+<li>virsh-V  显示版本的详细信息</li>
+</ul>
+<a id="more"></a>
+<h2 id="查看实例"><a href="#查看实例" class="headerlink" title="查看实例"></a>查看实例</h2><ul>
+<li>virsh list查看活动的虚拟机</li>
+<li>virsh list –all  查看所有的虚拟机（关闭和运行的虚拟机）</li>
+</ul>
+<p>虚拟机的状态有（8）种</p>
+<ul>
+<li>runing 是运行状态</li>
+<li>idel 是空闲状态</li>
+<li>pause 暂停状态</li>
+<li>shutdown 关闭状态</li>
+<li>shut off 不运行完全关闭</li>
+<li>crash 虚拟机崩坏状态</li>
+<li>daying 垂死状态</li>
+<li>pmsuspended 客户机被关掉电源中中断<h2 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h2></li>
+</ul>
+<p>qemu:///system (本地连接到系统实例)</p>
+<p>qemu+unix:///system(本地连接到系统实例)</p>
+<p>qemu://example.com/system(远程连接，TLS)</p>
+<p>qemu+tcp://example.com/system(远程登录，SASI)</p>
+<p>qemu+ssl://example.com/system(远程登录，SSL)</p>
+<p>-c - -connect 连接远程的主机</p>
+<p>-l - -log 输出日志</p>
+<p>-q - -quiet避免额外的信息</p>
+<p>-r - - readonly 只读，一般和connect配合使用</p>
+<p>-t - - timing 输出消逝的时间</p>
+<p>-e - - escape 设置转意序列</p>
+<h2 id="domain命令"><a href="#domain命令" class="headerlink" title="domain命令"></a>domain命令</h2><h3 id="创建、连接虚拟机"><a href="#创建、连接虚拟机" class="headerlink" title="创建、连接虚拟机"></a>创建、连接虚拟机</h3><ul>
+<li>define（file）从文件定义一个虚拟机（但是不启动）</li>
+<li>undefine （file） 取消定义的虚拟机</li>
+<li>create （file）：从文件创建虚拟机</li>
+<li><p>console （domain）：连接虚拟机的控制台</p>
+<h3 id="查看虚拟机状态"><a href="#查看虚拟机状态" class="headerlink" title="查看虚拟机状态"></a>查看虚拟机状态</h3></li>
+<li><p>dominfo（domian）显示虚拟机的信息</p>
+</li>
+<li>domname（idorUUID）显示虚拟机的名字</li>
+<li>domuuid （domian）显示虚拟机的id</li>
+<li>domid（id or name ） 根据名字得到id</li>
+<li>domstate（domian） 显示虚拟机的状态</li>
+<li>domstats（domian） 显示虚拟机的统计信息</li>
+<li>domcontrol(domian) 显示虚拟机的控制接口状态ok or error</li>
+<li>domtime（domian） 显示虚拟机的时间</li>
+<li>dommemstat（domain）获取虚拟机的内存统计信息</li>
+<li>domhostname（domain）显示虚拟机的主机名</li>
+<li>dump （domian file） 把文件配置输出到文件file</li>
+<li>dumpxml（domian）直接显示domian的xml文件配置</li>
+<li>domblklist（domain）显示虚拟机的磁盘</li>
+<li>domblkerror（domian）显示有错的磁盘</li>
+<li>domblkinfo（domaindevice）显示磁盘大小信息</li>
+<li>domblkstat（domaindevice）显示磁盘统计信息</li>
+<li>domiflist（domain）显示网卡接口</li>
+<li>domifaddr（domianinterface） 显示网络接口地址</li>
+<li>domif-getlink（domianinterface） 显示虚拟接口的链接状态</li>
+<li>domifstat（domianinterface） 显示网卡统计信息</li>
+<li>vcpuinfo（domian） 显示cpu的信息</li>
+<li>vcpucount （domian）显示 vcpu个数</li>
+<li>cpu-stats （domian） 显示虚拟机的cpu统计信息</li>
+<li>domdisplay （domian）显示地址和显卡</li>
+<li>vncdisplay（domian） 显示虚拟机的vnc 信息</li>
+<li>ttyconsole （domian） 显示设备用的终端</li>
+<li>domjobinfo （domian） 显示虚拟机的任务</li>
+<li>domjobabort（domian） 终止虚拟机活动的任务</li>
+<li>memtune（domian） 获取或设置虚拟机内存参数</li>
+<li>blkdeviotune（domian） 获取或设置虚拟机的块设备IO参数</li>
+<li>blkiotune（domian） 获取或设置虚拟机的磁盘参数</li>
+<li>domiftune（domian） 获取或设置虚拟机的虚拟接口参数</li>
+<li>metadata（domian） 获取或设置虚拟机的metadata</li>
+<li><p>schedinfo（domian） 获取或设置虚拟机的调度信息</p>
+<h3 id="管理虚拟机"><a href="#管理虚拟机" class="headerlink" title="管理虚拟机"></a>管理虚拟机</h3></li>
+<li><p>reset（domian）reset虚拟机</p>
+</li>
+<li>reboot（domian） 重启虚拟机</li>
+<li>start（name or id） 开启虚拟机</li>
+<li>shutdown（domian） 关闭虚拟机(soft shutdown)</li>
+<li>destroy（domain） 销毁虚拟机（Hard poweroff a physical machine）</li>
+<li>suspend （domian） 挂起虚拟机</li>
+<li>resume（domian） 回复虚拟机的suspend状态</li>
+<li>dompmsuspend（<domain> <target>） 挂起虚拟机（电源功能）</target></domain></li>
+<li>dompmwakeup（<domain>） 回复虚拟机的suspend状态（电源功能）</domain></li>
+<li>save（<domain><file>）保存虚拟机状态到文件中</file></domain></li>
+<li>restore（<file>）从保存状态的文件还原虚拟机</file></li>
+<li>managedsave（domian）托管保存虚拟机状态</li>
+<li>managedsave-remove（domian） 移除托管保存虚拟机状态</li>
+<li>managedsave-edit（domian）编辑托管保存状态的XML文件</li>
+<li>managedsave-dumpxml（domian）以XML文件格式显示托管保存状态文件</li>
+<li>managedsave-define（domianxml）用托管保存状态文件替换与之相关联的虚拟机的XML文件</li>
+<li>autostart （domain）：标示自动启动虚拟机</li>
+<li><p>screenshot （domian） 虚拟机截屏</p>
+<h3 id="修改虚拟机配置"><a href="#修改虚拟机配置" class="headerlink" title="修改虚拟机配置"></a>修改虚拟机配置</h3></li>
+<li><p>set-user-password（domianuser password）设置虚拟机用户密码</p>
+</li>
+<li>domrename（domiannew-name） 重新命名虚拟机</li>
+<li>setvcpus（domian count）设置虚拟机的虚拟cpu个数</li>
+<li>setmaxmen（domian）设置虚拟机的最大内存</li>
+<li>setmen（domian） size 设置虚拟机的内存</li>
+<li>vcpupin（domian）绑定虚拟机的vcpu与物理CPU</li>
+<li>emulatorpin（domian）绑定虚拟机的仿真器与物理CPU</li>
+<li>edit （domian） 编辑虚拟机的配置文件</li>
+<li><p>domif-setlink                  set link state of a virtual interface</p>
+<h3 id="虚拟机文件系统"><a href="#虚拟机文件系统" class="headerlink" title="虚拟机文件系统"></a>虚拟机文件系统</h3></li>
+<li><p>domfsfreeze                    Freeze domain’s mounted filesystems.</p>
+</li>
+<li>domfsthaw                      Thaw domain’s mounted filesystems.</li>
+<li>domfsinfo                      Get information of domain’s mounted filesystems.</li>
+<li><p>domfstrim                      Invoke fstrim on domain’s mounted filesystems.</p>
+<h3 id="虚拟机迁移"><a href="#虚拟机迁移" class="headerlink" title="虚拟机迁移"></a>虚拟机迁移</h3></li>
+<li><p>migrate                        migrate domain to another host</p>
+</li>
+<li>migrate-setmaxdowntime         set maximum tolerable downtime</li>
+<li>migrate-getmaxdowntime         get maximum tolerable downtime</li>
+<li>migrate-compcache              get/set compression cache size</li>
+<li>migrate-setspeed               Set the maximum migration bandwidth</li>
+<li>migrate-getspeed               Get the maximum migration bandwidth</li>
+<li><p>migrate-postcopy               Switch running migration from pre-copy to post-copy</p>
+<h3 id="虚拟机-attach-和-detach"><a href="#虚拟机-attach-和-detach" class="headerlink" title="虚拟机 attach 和 detach"></a>虚拟机 attach 和 detach</h3></li>
+<li><p>attach-device                  attach device from an XML file</p>
+</li>
+<li>attach-disk                    attach disk device</li>
+<li>attach-interface               attach network interface</li>
+<li>detach-device                  detach device from an XML file</li>
+<li>detach-device-alias            detach device from an alias</li>
+<li>detach-disk                    detach disk device</li>
+<li>detach-interface               detach network interface</li>
+<li><p>update-device                  update device from an XML file</p>
+<h3 id="虚拟机-image"><a href="#虚拟机-image" class="headerlink" title="虚拟机 image"></a>虚拟机 image</h3></li>
+<li><p>save-image-define              redefine the XML for a domain’s saved state file</p>
+</li>
+<li>save-image-dumpxml             saved state domain information in XML</li>
+<li><p>save-image-edit                edit XML for a domain’s saved state file</p>
+<h3 id="虚拟机-block"><a href="#虚拟机-block" class="headerlink" title="虚拟机 block"></a>虚拟机 block</h3></li>
+<li><p>blockcommit                    Start a block commit operation.</p>
+</li>
+<li>blockcopy                      Start a block copy operation.</li>
+<li>blockjob                       Manage active block operations</li>
+<li>blockpull                      Populate a disk from its backing image.</li>
+<li><p>blockresize                    Resize block device of domain.</p>
+<h2 id="virtual-network-命令"><a href="#virtual-network-命令" class="headerlink" title="virtual network 命令"></a>virtual network 命令</h2></li>
+<li><p>net-list 显示网络</p>
+</li>
+<li>net-info（<network>）显示网络信息</network></li>
+<li>net-uuid （<network>）显示网络的id</network></li>
+<li>net-name（<id>）显示网络的名字</id></li>
+<li>net-dumpxml（<network>） 以XML形式显示网络信息</network></li>
+<li>net-dhcp-leases（<network>）显示 dhcp 租约信息</network></li>
+<li>net-define （<file>） 从XML文件定义网卡</file></li>
+<li>net-undefine （<network>） 取消定义的网卡</network></li>
+<li>net-create （<file>） 从XML文件创建网卡</file></li>
+<li>net-edit（<network>） 编辑网卡信息</network></li>
+<li>net-update（<network> <command> <section> <xml>） 更新网卡配置</xml></section></network></li>
+<li>net-autostart (<network>) 自动启动网卡</network></li>
+<li>net-start （<network>）开启网卡</network></li>
+<li><p>net-destory ( <network>) 摧毁（停止）网卡</network></p>
+<h2 id="interface-命令"><a href="#interface-命令" class="headerlink" title="interface 命令"></a>interface 命令</h2></li>
+<li><p>iface-list 列出所有的接口</p>
+</li>
+<li>iface-name （mac） 根据mac得到名字</li>
+<li>iface-mac(interface) 根据名字得到mac</li>
+<li>iface-dumpxml （interface）显示接口的信息</li>
+<li>iface-define（file）从XML文件定义接口</li>
+<li>iface-undefine（interface） 取消定义的接口</li>
+<li>iface-edit（interface） 编辑接口</li>
+<li>iface-start（interface）开启接口 (enable it / “if-up”)</li>
+<li>iface-destroy（interface） 摧毁（停止）接口（disable it / “if-down”）</li>
+<li>iface-bridge 创建 bridge 设备并将现有网络设备连接到它</li>
+<li>iface-unbriged 解绑定网桥</li>
+<li>iface-begin（interface）创建当前接口设置的快照，可以稍后提交（iface-commit）或恢复（iface-rollback）</li>
+<li>iface-commit （interface）提交自 iface-begin 和 iface-rollbak以来所做的更改</li>
+<li><p>iface-rollbak （interface）回滚到通过iface-begin创建的先前保存的配置</p>
+<h2 id="storage-pool-命令"><a href="#storage-pool-命令" class="headerlink" title="storage pool 命令"></a>storage pool 命令</h2></li>
+<li><p>pool-list 的列表</p>
+</li>
+<li>pool-info 池的信息</li>
+<li>pool-name（id）根据id得到name</li>
+<li>pool-id（name）根据name得到id</li>
+<li>pool-uuid （pool） 返回一个池的uuid</li>
+<li>pool-define（file）定义但是不开启</li>
+<li>pool-create（file）根据文件创建池</li>
+<li>pool-build（pool）建造一个池</li>
+<li>pool-start（poop）开启池</li>
+<li>pool-destory（pool）销毁池，以后能回复</li>
+<li>pool-delete（pool）删除池，以后不能恢复</li>
+<li>pool-auto （pool）标记池自动启动</li>
+<li>pool-dumpxml（pool）查看池的定义文件</li>
+<li><p>pool-edit（pool）编辑池的定义文件</p>
+<h2 id="volume-命令"><a href="#volume-命令" class="headerlink" title="volume 命令"></a>volume 命令</h2></li>
+<li><p>vol-list（pool）列出卷</p>
+</li>
+<li>vol-info（pool）卷的信息</li>
+<li>vol-name（path）得到卷的名字</li>
+<li>vol-path                       returns the volume path for a given volume name or key</li>
+<li>vol-pool                       returns the storage pool for a given volume key or path</li>
+<li>vol-create                    create a vol from an XML file</li>
+<li>vol-create-as               create a volume from a set of args</li>
+<li>vol-create-from            create a vol, using another volume as input</li>
+<li>vol-delete（<vol>）卷的删除</vol></li>
+<li>vol-upload（pool）      upload file contents to a volume</li>
+<li>vol-download               download volume contents to a file</li>
+<li>vol-resize                     resize a vol</li>
+<li>vol-wipe                       wipe a vol</li>
+<li>vol-clone                      clone a volume.</li>
+<li>vol-dumpxml                vol information in XML</li>
+<li><p>vol-key                          returns the volume key for a given volume name or path</p>
+<h2 id="nwfilter-命令"><a href="#nwfilter-命令" class="headerlink" title="nwfilter 命令"></a>nwfilter 命令</h2></li>
+<li><p>nwfilter-define （file）根据文件生成一个网络过滤器</p>
+</li>
+<li>nwfilter-undefine（name） 删除网络过滤</li>
+<li>nwfilter-list 列出来网络过滤</li>
+<li>nwfilter-dumpxml（file）生成一个网络过滤的文件</li>
+<li>nwfilter-edit（name） 编辑一个网络过滤器<h1 id="动手实践"><a href="#动手实践" class="headerlink" title="动手实践"></a>动手实践</h1></li>
+</ul>
+<h2 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h2><ul>
+<li><p>准备虚拟机配置文件，复制一份 cirros.xml并命名为cirros_instance.xml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># cd /etc/libvirt/qemu</span></span><br><span class="line">[root@geekspeng qemu]<span class="comment"># ls</span></span><br><span class="line">autostart  cirros.xml  networks</span><br><span class="line">[root@geekspeng qemu]<span class="comment"># cp cirros.xml cirros_instance.xml </span></span><br><span class="line">[root@geekspeng qemu]<span class="comment"># ls</span></span><br><span class="line">autostart  cirros_instance.xml  cirros.xml  networks</span><br><span class="line">[root@geekspeng qemu]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 cirros_instance.xml 中的 name 为 cirros_instance，并删掉uuid</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># vim cirros_instance.xml</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建虚拟机的第一种方式（先定义在启动）</p>
+</li>
+</ul>
+<ol>
+<li>定义一个虚拟机<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh define cirros_instance.xml </span></span><br><span class="line">Domain cirros_instance defined from cirros_instance.xml</span><br><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 5     cirros                         running</span><br><span class="line"> -     cirros_instance                shut off</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可以看到此时虚拟机 cirros_instance 处于关机状态</p>
+<ol>
+<li>启动虚拟机<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh start cirros_instance </span></span><br><span class="line">Domain cirros_instance started[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 5     cirros                         running</span><br><span class="line"> 6     cirros_instance                running</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可以看到此时虚拟机 cirros_instance 处于运行状态</p>
+<ul>
+<li>创建虚拟机的第二种方式（直接启动）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 5     cirros                         running[root@geekspeng qemu]<span class="comment"># virsh create cirros_instance.xml </span></span><br><span class="line">Domain cirros_instance created from cirros_instance.xml[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 5     cirros                         running</span><br><span class="line"> 7     cirros_instance                running</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可以看到创建成功后，虚拟机 cirros_instance 直接处于运行状态</p>
+<h2 id="查看虚拟机"><a href="#查看虚拟机" class="headerlink" title="查看虚拟机"></a>查看虚拟机</h2><ul>
+<li><p>列出所有的虚拟机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 5     cirros                         running</span><br><span class="line"> 7     cirros_instance                running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出活动状态的虚拟机（将cirros 虚拟机关机）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh shutdown cirros</span></span><br><span class="line">Domain cirros is being shutdown[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 7     cirros_instance                running</span><br><span class="line"> -     cirros                         shut off[root@geekspeng qemu]<span class="comment"># virsh list</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 7     cirros_instance                running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示虚拟机信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh dominfo cirros_instance</span></span><br><span class="line">Id:             7</span><br><span class="line">Name:           cirros_instance</span><br><span class="line">UUID:           734c231f-0cea-497b-8a24-33368f1c10f5</span><br><span class="line">OS Type:        hvm</span><br><span class="line">State:          running</span><br><span class="line">CPU(s):         1</span><br><span class="line">CPU time:       223.5s</span><br><span class="line">Max memory:     102400 KiB</span><br><span class="line">Used memory:    102400 KiB</span><br><span class="line">Persistent:     no</span><br><span class="line">Autostart:      <span class="built_in">disable</span></span><br><span class="line">Managed save:   no</span><br><span class="line">Security model: none</span><br><span class="line">Security DOI:   0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示虚拟机的内存统计信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh dommemstat cirros_instance </span></span><br><span class="line">actual 102400</span><br><span class="line">rss 108380</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示虚拟机的 cpu信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh vcpucount cirros</span></span><br><span class="line">maximum      config         1</span><br><span class="line">maximum      live           1</span><br><span class="line">current      config         1</span><br><span class="line">current      live           1</span><br><span class="line">[root@geekspeng qemu]<span class="comment"># virsh vcpuinfo cirros_instance </span></span><br><span class="line">VCPU:           0</span><br><span class="line">CPU:            0</span><br><span class="line">State:          running</span><br><span class="line">CPU time:       219.5s</span><br><span class="line">CPU Affinity:   y</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面显示的是VCPU，CPU显示的是编号而不是个数，CPU Affinity为 y 显示 VCPU0绑定到CPU0</p>
+<ul>
+<li><p>显示虚拟机的磁盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh domblklist cirros_instance </span></span><br><span class="line">Target     Source</span><br><span class="line">------------------------------------------------</span><br><span class="line">hda        /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img[root@geekspeng qemu]<span class="comment"># virsh domblkinfo  cirros_instance hda</span></span><br><span class="line">Capacity:       41126400</span><br><span class="line">Allocation:     14602240</span><br><span class="line">Physical:       14614528</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示虚拟机的网卡接口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh domiflist cirros_instance </span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet1      network    default    rtl8139     52:54:00:31:e9:4d[root@geekspeng qemu]<span class="comment"># virsh domif-getlink cirros_instance vnet1 </span></span><br><span class="line">vnet1 up</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看虚拟机的 xml 配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh dumpxml cirros_instance </span></span><br><span class="line">&lt;domain <span class="built_in">type</span>=<span class="string">'kvm'</span> id=<span class="string">'7'</span>&gt;</span><br><span class="line">  &lt;name&gt;cirros_instance&lt;/name&gt;</span><br><span class="line">  &lt;uuid&gt;734c231f-0cea-497b-8a24-33368f1c10f5&lt;/uuid&gt;</span><br><span class="line">  &lt;memory unit=<span class="string">'KiB'</span>&gt;102400&lt;/memory&gt;</span><br><span class="line">  &lt;currentMemory unit=<span class="string">'KiB'</span>&gt;102400&lt;/currentMemory&gt;</span><br><span class="line">  &lt;vcpu placement=<span class="string">'static'</span>&gt;1&lt;/vcpu&gt;</span><br><span class="line">  &lt;resource&gt;</span><br><span class="line">    &lt;partition&gt;/machine&lt;/partition&gt;</span><br><span class="line">  &lt;/resource&gt;</span><br><span class="line">  &lt;os&gt;</span><br><span class="line">    &lt;<span class="built_in">type</span> arch=<span class="string">'x86_64'</span> machine=<span class="string">'pc-i440fx-rhel7.0.0'</span>&gt;hvm&lt;/<span class="built_in">type</span>&gt;</span><br><span class="line">    &lt;boot dev=<span class="string">'hd'</span>/&gt;</span><br><span class="line">  &lt;/os&gt;</span><br><span class="line">  &lt;features&gt;</span><br><span class="line">    &lt;acpi/&gt;</span><br><span class="line">    &lt;apic/&gt;</span><br><span class="line">  &lt;/features&gt;</span><br><span class="line">  &lt;cpu mode=<span class="string">'custom'</span> match=<span class="string">'exact'</span> check=<span class="string">'full'</span>&gt;</span><br><span class="line">    &lt;model fallback=<span class="string">'forbid'</span>&gt;SandyBridge&lt;/model&gt;</span><br><span class="line">    &lt;feature policy=<span class="string">'require'</span> name=<span class="string">'hypervisor'</span>/&gt;</span><br><span class="line">    &lt;feature policy=<span class="string">'disable'</span> name=<span class="string">'xsaveopt'</span>/&gt;</span><br><span class="line">  &lt;/cpu&gt;</span><br><span class="line">  &lt;clock offset=<span class="string">'utc'</span>&gt;</span><br><span class="line">    &lt;timer name=<span class="string">'rtc'</span> tickpolicy=<span class="string">'catchup'</span>/&gt;</span><br><span class="line">    &lt;timer name=<span class="string">'pit'</span> tickpolicy=<span class="string">'delay'</span>/&gt;</span><br><span class="line">    &lt;timer name=<span class="string">'hpet'</span> present=<span class="string">'no'</span>/&gt;</span><br><span class="line">  &lt;/clock&gt;</span><br><span class="line">  &lt;on_poweroff&gt;destroy&lt;/on_poweroff&gt;</span><br><span class="line">  &lt;on_reboot&gt;restart&lt;/on_reboot&gt;</span><br><span class="line">  &lt;on_crash&gt;destroy&lt;/on_crash&gt;</span><br><span class="line">  &lt;pm&gt;</span><br><span class="line">    &lt;<span class="built_in">suspend</span>-to-mem enabled=<span class="string">'no'</span>/&gt;</span><br><span class="line">    &lt;<span class="built_in">suspend</span>-to-disk enabled=<span class="string">'no'</span>/&gt;</span><br><span class="line">  &lt;/pm&gt;</span><br><span class="line">  &lt;devices&gt;</span><br><span class="line">    &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;</span><br><span class="line">    &lt;disk <span class="built_in">type</span>=<span class="string">'file'</span> device=<span class="string">'disk'</span>&gt;</span><br><span class="line">      &lt;driver name=<span class="string">'qemu'</span> <span class="built_in">type</span>=<span class="string">'qcow2'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">source</span> file=<span class="string">'/var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img'</span>/&gt;</span><br><span class="line">      &lt;backingStore/&gt;</span><br><span class="line">      &lt;target dev=<span class="string">'hda'</span> bus=<span class="string">'ide'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'ide0-0-0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'drive'</span> controller=<span class="string">'0'</span> bus=<span class="string">'0'</span> target=<span class="string">'0'</span> unit=<span class="string">'0'</span>/&gt;</span><br><span class="line">    &lt;/disk&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'usb'</span> index=<span class="string">'0'</span> model=<span class="string">'ich9-ehci1'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'usb'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x05'</span> <span class="keyword">function</span>=<span class="string">'0x7'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'usb'</span> index=<span class="string">'0'</span> model=<span class="string">'ich9-uhci1'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'usb'</span>/&gt;</span><br><span class="line">      &lt;master startport=<span class="string">'0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x05'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span> multifunction=<span class="string">'on'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'usb'</span> index=<span class="string">'0'</span> model=<span class="string">'ich9-uhci2'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'usb'</span>/&gt;</span><br><span class="line">      &lt;master startport=<span class="string">'2'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x05'</span> <span class="keyword">function</span>=<span class="string">'0x1'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'usb'</span> index=<span class="string">'0'</span> model=<span class="string">'ich9-uhci3'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'usb'</span>/&gt;</span><br><span class="line">      &lt;master startport=<span class="string">'4'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x05'</span> <span class="keyword">function</span>=<span class="string">'0x2'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'pci'</span> index=<span class="string">'0'</span> model=<span class="string">'pci-root'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'pci.0'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'ide'</span> index=<span class="string">'0'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'ide'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x01'</span> <span class="keyword">function</span>=<span class="string">'0x1'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;controller <span class="built_in">type</span>=<span class="string">'virtio-serial'</span> index=<span class="string">'0'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'virtio-serial0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x06'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span>/&gt;</span><br><span class="line">    &lt;/controller&gt;</span><br><span class="line">    &lt;interface <span class="built_in">type</span>=<span class="string">'network'</span>&gt;</span><br><span class="line">      &lt;mac address=<span class="string">'52:54:00:31:e9:4d'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">source</span> network=<span class="string">'default'</span> bridge=<span class="string">'virbr0'</span>/&gt;</span><br><span class="line">      &lt;target dev=<span class="string">'vnet1'</span>/&gt;</span><br><span class="line">      &lt;model <span class="built_in">type</span>=<span class="string">'rtl8139'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'net0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x03'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span>/&gt;</span><br><span class="line">    &lt;/interface&gt;</span><br><span class="line">    &lt;serial <span class="built_in">type</span>=<span class="string">'pty'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">source</span> path=<span class="string">'/dev/pts/4'</span>/&gt;</span><br><span class="line">      &lt;target <span class="built_in">type</span>=<span class="string">'isa-serial'</span> port=<span class="string">'0'</span>&gt;</span><br><span class="line">        &lt;model name=<span class="string">'isa-serial'</span>/&gt;</span><br><span class="line">      &lt;/target&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'serial0'</span>/&gt;</span><br><span class="line">    &lt;/serial&gt;</span><br><span class="line">    &lt;console <span class="built_in">type</span>=<span class="string">'pty'</span> tty=<span class="string">'/dev/pts/4'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">source</span> path=<span class="string">'/dev/pts/4'</span>/&gt;</span><br><span class="line">      &lt;target <span class="built_in">type</span>=<span class="string">'serial'</span> port=<span class="string">'0'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'serial0'</span>/&gt;</span><br><span class="line">    &lt;/console&gt;</span><br><span class="line">    &lt;channel <span class="built_in">type</span>=<span class="string">'spicevmc'</span>&gt;</span><br><span class="line">      &lt;target <span class="built_in">type</span>=<span class="string">'virtio'</span> name=<span class="string">'com.redhat.spice.0'</span> state=<span class="string">'disconnected'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'channel0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'virtio-serial'</span> controller=<span class="string">'0'</span> bus=<span class="string">'0'</span> port=<span class="string">'1'</span>/&gt;</span><br><span class="line">    &lt;/channel&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">'mouse'</span> bus=<span class="string">'ps2'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'input0'</span>/&gt;</span><br><span class="line">    &lt;/input&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">'keyboard'</span> bus=<span class="string">'ps2'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'input1'</span>/&gt;</span><br><span class="line">    &lt;/input&gt;</span><br><span class="line">    &lt;graphics <span class="built_in">type</span>=<span class="string">'spice'</span> port=<span class="string">'5901'</span> autoport=<span class="string">'yes'</span> listen=<span class="string">'127.0.0.1'</span>&gt;</span><br><span class="line">      &lt;listen <span class="built_in">type</span>=<span class="string">'address'</span> address=<span class="string">'127.0.0.1'</span>/&gt;</span><br><span class="line">      &lt;image compression=<span class="string">'off'</span>/&gt;</span><br><span class="line">    &lt;/graphics&gt;</span><br><span class="line">    &lt;sound model=<span class="string">'ich6'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'sound0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x04'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span>/&gt;</span><br><span class="line">    &lt;/sound&gt;</span><br><span class="line">    &lt;video&gt;</span><br><span class="line">      &lt;model <span class="built_in">type</span>=<span class="string">'qxl'</span> ram=<span class="string">'65536'</span> vram=<span class="string">'65536'</span> vgamem=<span class="string">'16384'</span> heads=<span class="string">'1'</span> primary=<span class="string">'yes'</span>/&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'video0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x02'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span>/&gt;</span><br><span class="line">    &lt;/video&gt;</span><br><span class="line">    &lt;redirdev bus=<span class="string">'usb'</span> <span class="built_in">type</span>=<span class="string">'spicevmc'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'redir0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'usb'</span> bus=<span class="string">'0'</span> port=<span class="string">'1'</span>/&gt;</span><br><span class="line">    &lt;/redirdev&gt;</span><br><span class="line">    &lt;redirdev bus=<span class="string">'usb'</span> <span class="built_in">type</span>=<span class="string">'spicevmc'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'redir1'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'usb'</span> bus=<span class="string">'0'</span> port=<span class="string">'2'</span>/&gt;</span><br><span class="line">    &lt;/redirdev&gt;</span><br><span class="line">    &lt;memballoon model=<span class="string">'virtio'</span>&gt;</span><br><span class="line">      &lt;<span class="built_in">alias</span> name=<span class="string">'balloon0'</span>/&gt;</span><br><span class="line">      &lt;address <span class="built_in">type</span>=<span class="string">'pci'</span> domain=<span class="string">'0x0000'</span> bus=<span class="string">'0x00'</span> slot=<span class="string">'0x07'</span> <span class="keyword">function</span>=<span class="string">'0x0'</span>/&gt;</span><br><span class="line">    &lt;/memballoon&gt;</span><br><span class="line">  &lt;/devices&gt;</span><br><span class="line">  &lt;seclabel <span class="built_in">type</span>=<span class="string">'dynamic'</span> model=<span class="string">'dac'</span> relabel=<span class="string">'yes'</span>&gt;</span><br><span class="line">    &lt;label&gt;+107:+107&lt;/label&gt;</span><br><span class="line">    &lt;imagelabel&gt;+107:+107&lt;/imagelabel&gt;</span><br><span class="line">  &lt;/seclabel&gt;</span><br><span class="line">&lt;/domain&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="连接虚拟机"><a href="#连接虚拟机" class="headerlink" title="连接虚拟机"></a>连接虚拟机</h2><ul>
+<li><p>通过控制窗口登录虚拟机（ctrl + ] 退出登录）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh console cirros_instance </span></span><br><span class="line">Connected to domain cirros_instance</span><br><span class="line">Escape character is ^]login as <span class="string">'cirros'</span> user. default password: <span class="string">'cubswin:)'</span>. use <span class="string">'sudo'</span> <span class="keyword">for</span> root.</span><br><span class="line">cirros login:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过 ssh 连接虚拟机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># ssh cirros@192.168.122.157</span></span><br><span class="line">cirros@192.168.122.157<span class="string">'s password: </span></span><br><span class="line"><span class="string">$</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>远程连接虚拟机</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virt-viewer -c qemu+ssh://10.0.0.200/system cirros</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="管理虚拟机-1"><a href="#管理虚拟机-1" class="headerlink" title="管理虚拟机"></a>管理虚拟机</h2><ul>
+<li><p>关闭虚拟机（shutodwn）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 1     cirros                         running</span><br><span class="line"> 3     cirros_instance                running[root@geekspeng qemu]<span class="comment"># virsh shutdown cirros</span></span><br><span class="line">Domain cirros is being shutdown[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> -     cirros                         shut off</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动虚拟机（start）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> -     cirros                         shut off[root@geekspeng qemu]<span class="comment"># virsh start cirros</span></span><br><span class="line">Domain cirros started[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 4     cirros                         running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂起虚拟机（suspend ）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 4     cirros                         running[root@geekspeng qemu]<span class="comment"># virsh suspend cirros</span></span><br><span class="line">Domain cirros suspended[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 4     cirros                         paused</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恢复虚拟机（resume）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 4     cirros                         paused[root@geekspeng qemu]<span class="comment"># virsh resume cirros</span></span><br><span class="line">Domain cirros resumed[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 4     cirros                         running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存虚拟机状态到文件中（save）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 5     cirros                         running[root@geekspeng qemu]<span class="comment"># virsh save cirros testDomain cirros saved to test[root@geekspeng qemu]# virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> -     cirros                         shut off</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从保存状态的文件还原虚拟机（restore）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> -     cirros                         shut off[root@geekspeng qemu]<span class="comment"># virsh restore test</span></span><br><span class="line">Domain restored from <span class="built_in">test</span>[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 3     cirros_instance                running</span><br><span class="line"> 6     cirros                         running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重置虚拟机（reset ）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh reset cirros</span></span><br><span class="line">Domain cirros was reset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启虚拟机（reboot）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh reboot cirros</span></span><br><span class="line">Domain cirros is being rebooted</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建删除快照</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh snapshot-create cirros</span></span><br><span class="line">Domain snapshot 1548304381 created[root@geekspeng dnsmasq]<span class="comment"># virsh snapshot-revert cirros 1548304381[root@geekspeng dnsmasq]# virsh snapshot-list cirros</span></span><br><span class="line"> Name                 Creation Time             State</span><br><span class="line">------------------------------------------------------------</span><br><span class="line"> 1548304381           2019-01-23 20:33:01 -0800 running[root@geekspeng dnsmasq]<span class="comment"># virsh snapshot-delete cirros 1548304381 </span></span><br><span class="line">Domain snapshot 1548304381 deleted[root@geekspeng dnsmasq]<span class="comment"># virsh snapshot-list cirros</span></span><br><span class="line"> Name                 Creation Time             State</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>冷迁移虚拟机（虚拟机需要关机）</li>
+</ul>
+<p>源主机（10.0.0.200）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> -     cirros                         shut off</span><br><span class="line"> -     cirros_instance                shut off</span><br><span class="line">[root@geekspeng ~]<span class="comment"># virsh migrate cirros --offline qemu+ssh://10.0.0.201/system  --persistent</span></span><br><span class="line">root@10.0.0.201<span class="string">'s password: </span></span><br><span class="line"><span class="string">[root@geekspeng ~]# virsh migrate cirros_instance --offline qemu+ssh://10.0.0.201/system  --persistent</span></span><br><span class="line"><span class="string">root@10.0.0.201'</span>s password: [root@geekspeng ~]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> -     cirros                         shut off</span><br><span class="line"> -     cirros_instance                shut off</span><br></pre></td></tr></table></figure>
+<p>目标主机（10.0.0.201）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng1 ~]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> -     cirros                         shut off</span><br><span class="line"> -     cirros_instance                shut off</span><br></pre></td></tr></table></figure>
+<p>迁移完成后，虚拟机同时在源主机和目标主机存在</p>
+<ul>
+<li><p>热迁移虚拟机（需要共享存储）</p>
+<h2 id="修改虚拟机配置-1"><a href="#修改虚拟机配置-1" class="headerlink" title="修改虚拟机配置"></a>修改虚拟机配置</h2></li>
+<li><p>重新命名虚拟机（domrename）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh shutdown cirros</span></span><br><span class="line">Domain cirros is being shutdown[root@geekspeng qemu]<span class="comment"># virsh domrename cirros cirros1</span></span><br><span class="line">Domain successfully renamed[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 13    cirros_instance                running</span><br><span class="line"> -     cirros1                        shut off[root@geekspeng qemu]<span class="comment"># virsh domrename cirros1 cirros</span></span><br><span class="line">Domain successfully renamed[root@geekspeng qemu]<span class="comment"># virsh start cirros</span></span><br><span class="line">Domain cirros started[root@geekspeng qemu]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 13    cirros_instance                running</span><br><span class="line"> 14    cirros                         running</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑虚拟机的配置文件（edit）</p>
+</li>
+</ul>
+<p>将vcpu 个数从1个改成两个 <vcpu placement="static">2</vcpu></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh vcpucount cirros</span></span><br><span class="line">maximum      config         1</span><br><span class="line">maximum      live           1</span><br><span class="line">current      config         1</span><br><span class="line">current      live           1[root@geekspeng qemu]<span class="comment"># virsh shutdown cirros</span></span><br><span class="line">Domain cirros is being shutdown[root@geekspeng qemu]<span class="comment"># virsh edit cirros</span></span><br><span class="line">Domain cirros XML configuration edited.[root@geekspeng qemu]<span class="comment"># virsh create /etc/libvirt/qemu/cirros.xml </span></span><br><span class="line">Domain cirros created from /etc/libvirt/qemu/cirros.xml</span><br><span class="line">[root@geekspeng qemu]<span class="comment"># virsh vcpucount cirros</span></span><br><span class="line">maximum      config         2</span><br><span class="line">maximum      live           2</span><br><span class="line">current      config         2</span><br></pre></td></tr></table></figure>
+<p>current      live           2</p>
+<ul>
+<li><p>设置虚拟机的内存大小（setmaxmem，setmem）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh shutdown cirros</span></span><br><span class="line">Domain cirros is being shutdown[root@geekspeng qemu]<span class="comment"># virsh dominfo cirros | grep memory</span></span><br><span class="line">Max memory:     131072 KiB</span><br><span class="line">Used memory:    131072 KiB</span><br><span class="line">[root@geekspeng qemu]<span class="comment"># virsh setmaxmem cirros 524288 # 需要关机[root@geekspeng qemu]# virsh dominfo cirros | grep memory</span></span><br><span class="line">Max memory:     524288 KiB</span><br><span class="line">Used memory:    131072 KiB[root@geekspeng qemu]<span class="comment"># virsh start cirros</span></span><br><span class="line">Domain cirros started[root@geekspeng qemu]<span class="comment"># virsh setmem cirros 524288 # 需要开机[root@geekspeng qemu]# virsh dominfo cirros | grep memory</span></span><br><span class="line">Max memory:     524288 KiB</span><br><span class="line">Used memory:    524288 KiB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置虚拟机的vcpu个数（setvcpus）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh vcpucount cirros_instance </span></span><br><span class="line">maximum      config         2</span><br><span class="line">maximum      live           2</span><br><span class="line">current      config         1</span><br><span class="line">current      live           1[root@geekspeng ~]<span class="comment"># virsh setvcpus cirros_instance 2  --current [root@geekspeng ~]# virsh setvcpus cirros_instance 2  --config</span></span><br><span class="line">[root@geekspeng ~]<span class="comment"># virsh vcpucount cirros_instance </span></span><br><span class="line">maximum      config         2</span><br><span class="line">maximum      live           2</span><br><span class="line">current      config         2</span><br><span class="line">current      live           2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭或打开某个网口（domif-setlink）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng qemu]<span class="comment"># virsh domiflist cirros</span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet0      bridge     br0        rtl8139     52:54:00:b9:bf:4f[root@geekspeng qemu]<span class="comment"># virsh domif-setlink cirros vnet0 down</span></span><br><span class="line">Device updated successfully[root@geekspeng qemu]<span class="comment"># virsh domif-getlink cirros vnet0</span></span><br><span class="line">vnet0 down[root@geekspeng qemu]<span class="comment"># virsh domif-setlink cirros vnet0 up</span></span><br><span class="line">Device updated successfully[root@geekspeng qemu]<span class="comment"># virsh domif-getlink cirros vnet0</span></span><br><span class="line">vnet0 up</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="挂载卸载硬盘"><a href="#挂载卸载硬盘" class="headerlink" title="挂载卸载硬盘"></a>挂载卸载硬盘</h2><ul>
+<li><p>创建虚拟硬盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh vol-create-as default cirros.qcow2 100M --format qcow2</span></span><br><span class="line">Vol cirros.qcow2 created</span><br><span class="line">[root@geekspeng ~]<span class="comment"># virsh vol-list default</span></span><br><span class="line"> Name                 Path                                    </span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line"> cirros-0.3.4-x86_64-disk.img /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br><span class="line"> cirros.qcow2         /var/lib/libvirt/images/cirros.qcow2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂载虚拟硬盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh domblklist cirros</span></span><br><span class="line">Target     Source</span><br><span class="line">------------------------------------------------</span><br><span class="line">vda        /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">[root@geekspeng ~]<span class="comment"># virsh attach-disk cirros /var/lib/libvirt/images/cirros.qcow2 vdb</span></span><br><span class="line">Disk attached successfully[root@geekspeng ~]<span class="comment"># virsh domblklist cirros</span></span><br><span class="line">Target     Source</span><br><span class="line">------------------------------------------------</span><br><span class="line">vda        /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">vdb        /var/lib/libvirt/images/cirros.qcow2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>重启后仍然生效</p>
+<ul>
+<li><p>卸载虚拟硬盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh domblklist cirros</span></span><br><span class="line">Target     Source</span><br><span class="line">------------------------------------------------</span><br><span class="line">vda        /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">vdb        /var/lib/libvirt/images/cirros.qcow2[root@geekspeng ~]<span class="comment"># virsh detach-disk cirros vdb</span></span><br><span class="line">Disk detached successfully[root@geekspeng ~]<span class="comment"># virsh domblklist cirros</span></span><br><span class="line">Target     Source</span><br><span class="line">------------------------------------------------</span><br><span class="line">vda        /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除虚拟硬盘</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh vol-list default </span></span><br><span class="line"> Name                 Path                                    </span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line"> cirros-0.3.4-x86_64-disk.img /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br><span class="line"> cirros.qcow2         /var/lib/libvirt/images/cirros.qcow2    [root@geekspeng ~]<span class="comment"># virsh vol-delete cirros.qcow2 --pool default </span></span><br><span class="line">Vol cirros.qcow2 deleted[root@geekspeng ~]<span class="comment"># virsh vol-list default </span></span><br><span class="line"> Name                 Path                                    </span><br><span class="line">------------------------------------------------------------------------------</span><br><span class="line"> cirros-0.3.4-x86_64-disk.img /var/lib/libvirt/images/cirros-0.3.4-x86_64-disk.img</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="挂载卸载网卡"><a href="#挂载卸载网卡" class="headerlink" title="挂载卸载网卡"></a>挂载卸载网卡</h2><p>临时挂载虚拟网卡，修改保存在内存中，重启就失效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh domiflist cirros</span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet1      network    default    virtio      52:54:00:f2:14:b0[root@geekspeng dnsmasq]<span class="comment"># virsh attach-interface cirros network default --model virtioInterface attached successfully[root@geekspeng dnsmasq]# virsh domiflist cirros</span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet1      network    default    virtio      52:54:00:f2:14:b0</span><br><span class="line">vnet2      network    default    virtio      52:54:00:12:9c:2b</span><br></pre></td></tr></table></figure>
+<p>虽然 virsh 看绑定了vnet2，但是虚拟机内部并没有增加一张网卡，手动增加并启动<br>永久挂载虚拟网卡，修改会保存到配置文件中（也可以直接修改配置文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh attach-interface cirros bridge br0 --model virtio --persistent --config</span></span><br><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh dumpxml cirros &gt;/etc/libvirt/qemu/cirros.xml</span></span><br><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh define /etc/libvirt/qemu/cirros.xml</span></span><br></pre></td></tr></table></figure>
+<p>卸载虚拟网卡</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng dnsmasq]<span class="comment"># virsh domiflist cirros</span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet1      network    default    virtio      52:54:00:f2:14:b0</span><br><span class="line">vnet2      network    default    virtio      52:54:00:12:9c:2b[root@geekspeng dnsmasq]<span class="comment"># virsh detach-interface cirros --type network --mac 52:54:00:12:9c:2b</span></span><br><span class="line">Interface detached successfully[root@geekspeng dnsmasq]<span class="comment"># virsh domiflist cirros</span></span><br><span class="line">Interface  Type       Source     Model       MAC</span><br><span class="line">-------------------------------------------------------</span><br><span class="line">vnet1      network    default    virtio      52:54:00:f2:14:b0</span><br></pre></td></tr></table></figure>
+<h2 id="删除虚拟机"><a href="#删除虚拟机" class="headerlink" title="删除虚拟机"></a>删除虚拟机</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@geekspeng ~]<span class="comment"># virsh shutdown cirros_instance  # 关机</span></span><br><span class="line">Domain cirros_instance is being shutdown[root@geekspeng ~]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 23    cirros                         running</span><br><span class="line"> -     cirros_instance                shut off[root@geekspeng ~]<span class="comment"># virsh undefine cirros_instance # 删除定义虚拟机的xml文件  </span></span><br><span class="line">Domain cirros_instance has been undefined[root@geekspeng ~]<span class="comment"># virsh list --all</span></span><br><span class="line"> Id    Name                           State</span><br><span class="line">----------------------------------------------------</span><br><span class="line"> 23    cirros                         running</span><br></pre></td></tr></table></figure>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul>
+<li>virsh shutdown 不起作用</li>
+</ul>
+<p>如果使用 Xen HVM or QEMU/KVM，需要安装 ACPI  并且启动 ACPI ，同时检查虚拟机的配置文件是否配置了 ACPI</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># virsh dumpxml $your-vm-name | grep acpi</span></span><br><span class="line">&lt;features&gt;&lt;acpi/&gt;&lt;/features&gt;</span><br></pre></td></tr></table></figure>
+<p>如果 shutdown 还不起作用需要确定虚拟机此时已经完全启动起来，否则虽然virsh list 显示虚拟机是运行状态，但是还是无法执行virsh shutdown命令</p>
+<ul>
+<li>如果我更改了正在运行的虚拟机的XML，那么更改是否会立即生效？</li>
+</ul>
+<p>不会. 重新定义正在运行的虚拟机的XML不会更改任何内容，更改将在下一次VM启动后生效.。Libvirt 有一组命令用于对正在运行的虚拟机进行实时更改，这些命令具有不同的支持，具体取决于hypervisor，例如 virsh attach- <em>， virsh detach- </em>，virsh setmem，virsh setvcpus</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_geekspeng.jpg" alt="geekspeng wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的二维码，订阅我的微信公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    geekspeng
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://geekspeng.cn/2019/04/24/virsh 命令详解.html" title="virsh 命令详解">http://geekspeng.cn/2019/04/24/virsh 命令详解.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/虚拟化/" rel="tag"><i class="fa fa-tag"></i> 虚拟化</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/18/使用virt-install安装虚拟机.html" rel="next" title="使用virt-install安装虚拟机">
+                <i class="fa fa-chevron-left"></i> 使用virt-install安装虚拟机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/11/Centos7 CPU 隔离 和 绑定.html" rel="prev" title="Centos7 CPU 隔离 和 绑定">
+                Centos7 CPU 隔离 和 绑定 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/geekspeng.png"
+                alt="geekspeng" />
+            
+              <p class="site-author-name" itemprop="name">geekspeng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/geekspeng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:geekspeng@icloud.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huxiu.com/" title="虎嗅网" target="_blank">虎嗅网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.infoq.com/cn/" title="InfoQ" target="_blank">InfoQ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.jobbole.com/" title="伯乐在线" target="_blank">伯乐在线</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.cnblogs.com/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令列表"><span class="nav-number">2.</span> <span class="nav-text">命令列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#版本信息"><span class="nav-number">2.1.</span> <span class="nav-text">版本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看实例"><span class="nav-number">2.2.</span> <span class="nav-text">查看实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接方式"><span class="nav-number">2.3.</span> <span class="nav-text">连接方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#domain命令"><span class="nav-number">2.4.</span> <span class="nav-text">domain命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建、连接虚拟机"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建、连接虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看虚拟机状态"><span class="nav-number">2.4.2.</span> <span class="nav-text">查看虚拟机状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理虚拟机"><span class="nav-number">2.4.3.</span> <span class="nav-text">管理虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改虚拟机配置"><span class="nav-number">2.4.4.</span> <span class="nav-text">修改虚拟机配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机文件系统"><span class="nav-number">2.4.5.</span> <span class="nav-text">虚拟机文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机迁移"><span class="nav-number">2.4.6.</span> <span class="nav-text">虚拟机迁移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机-attach-和-detach"><span class="nav-number">2.4.7.</span> <span class="nav-text">虚拟机 attach 和 detach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机-image"><span class="nav-number">2.4.8.</span> <span class="nav-text">虚拟机 image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机-block"><span class="nav-number">2.4.9.</span> <span class="nav-text">虚拟机 block</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#virtual-network-命令"><span class="nav-number">2.5.</span> <span class="nav-text">virtual network 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interface-命令"><span class="nav-number">2.6.</span> <span class="nav-text">interface 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#storage-pool-命令"><span class="nav-number">2.7.</span> <span class="nav-text">storage pool 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volume-命令"><span class="nav-number">2.8.</span> <span class="nav-text">volume 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nwfilter-命令"><span class="nav-number">2.9.</span> <span class="nav-text">nwfilter 命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动手实践"><span class="nav-number">3.</span> <span class="nav-text">动手实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建虚拟机"><span class="nav-number">3.1.</span> <span class="nav-text">创建虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看虚拟机"><span class="nav-number">3.2.</span> <span class="nav-text">查看虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接虚拟机"><span class="nav-number">3.3.</span> <span class="nav-text">连接虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理虚拟机-1"><span class="nav-number">3.4.</span> <span class="nav-text">管理虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改虚拟机配置-1"><span class="nav-number">3.5.</span> <span class="nav-text">修改虚拟机配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载卸载硬盘"><span class="nav-number">3.6.</span> <span class="nav-text">挂载卸载硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载卸载网卡"><span class="nav-number">3.7.</span> <span class="nav-text">挂载卸载网卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除虚拟机"><span class="nav-number">3.8.</span> <span class="nav-text">删除虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">4.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">geekspeng</span>
+  <a href="http://www.miitbeian.gov.cn/">蜀ICP备15010699号-1</a>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">204k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点总阅读时间">3:24</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.1"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz',
+        appKey: 'bxqh0jEe46EikJAKPxYAMiyS',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("DgKfr53reRBXctrd4bD6jzeq-gzGzoHsz", "bxqh0jEe46EikJAKPxYAMiyS");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "middleRight";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
